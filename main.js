@@ -4,8 +4,8 @@ $(document).ready(function(){
     function showRecipes(){
 
         // 
-        var queryURL = "https://api.edamam.com/search?q=chicken&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a";
-    
+        var queryURL = "https://api.edamam.com/search?q=peanut+butter%2C+bread&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a";
+        
         $.ajax({
             url: queryURL,
             method: "GET"
