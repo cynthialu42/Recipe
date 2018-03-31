@@ -1,5 +1,22 @@
 $(document).ready(function(){
 
+    let ingredientsList = ['lettuce', 'pepper', 'olives'];
+
+
+    function createList() {
+        $('.js-list').empty();
+
+        for (i = 0; i < ingredientsList.length; i++) {
+            let newIngredient = $("<button>");
+
+            newIngredient.attr("data-ingredient", ingredientsList[i]);
+
+            newIngredient.text(ingredientsList[i]);
+
+            $('.js-list').append(newIngredient);
+        }
+    }
+
     // need to push all ingredients to an array
     function showRecipes(){
 
@@ -15,5 +32,18 @@ $(document).ready(function(){
     
     }
 
-    showRecipes();
+    $('.js-add').on('click', function() {
+        event.preventDefault();
+
+        let ingredient = $('.js-input').val().trim();
+        ingredientsList.push(ingredient);
+        createList();
+        console.log('You clicked on the submit button');
+        console.log(ingredient);
+        $('.js-input').val('');
+    });
+
+
+    createList();
+    // showRecipes();
 });

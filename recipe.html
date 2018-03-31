@@ -1,118 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Recipe Search</title>
-        <!-- Bootswatch Styling for Improving the Aesthetics -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-        <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <!-- Style to fix the issue of text extending past panel length -->
-        <style>
-          .panel-body a {
-            word-break: break-all;
-          }
-          .articleHeadline {
-            line-height: 1.5;
-          }
-        </style>
-      </head>
-      <body>
-        <!-- Main Bootstrap Search -->
-        <div class="container">
-          <!-- Jumbotron for Title -->
-          <div class="jumbotron" style="background-color: #20315A ; color: white;">
-            <h1 class="text-center">
-              <strong>
-                <i class="fa fa-newspaper-o"></i> Recipe Search</strong>
-            </h1>
-          </div>
-          <!-- Row for Searching New York Times -->
-          <div class="row">
-            <div class="col-sm-12">
-              <br>
-              <!-- First panel is for handling the search parameters -->
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">
-                    <strong>
-                      <i class="fa  fa-list-alt"></i> Search Parameters</strong>
-                  </h3>
-                </div>
-                <div class="panel-body">
-                  <!-- Here we create an HTML Form for handling the inputs-->
-                  <form role="form">
-                    <!-- Here we create the text box for capturing the search term-->
-                    <div class="form-group">
-                      <label for="search">Ingredients:</label>
-                      <input type="text" class="form-control" id="search-term">
-                    </div>
-                    <!-- Here we capture the number of records that the user wants to retrieve  -->
-                    <div class="form-group">
-                      <label for="pwd">Difficulty from 1-5 stars:</label>
-                      <select class="form-control" id="article-count">
-                        <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                        <option value="1">4</option>
-                        <option value="1">5</option>
-                      </select>
-                    </div>
-                    <!-- Here we capture the Start Year Parameter-->
-                    <div class="form-group">
-                      <label for="start-year">Cook Time:</label>
-                      <input type="text" class="form-control" id="start-year">
-                    </div>
-                    <!-- Here we capture the End Year Parameter -->
-                    <div class="form-group">
-                      <label for="end-year">Expiration:</label>
-                      <input type="text" class="form-control" id="end-year">
-                    </div>
-                    <!-- Here we have our final submit button -->
-                    <button type="submit" class="btn btn-default" id="run-search">
-                      <i class="fa fa-search"></i> Search</button>
-                    <button type="button" class="btn btn-default" id="clear-all">
-                      <i class="fa fa-trash"></i> Clear Results</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- This row will handle all of the retrieved articles -->
-          <div class="row">
-            <div class="col-sm-12">
-              <br>
-              <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
-              <div class="panel panel-primary">
-                <!-- Panel Heading for the retrieved articles box -->
-                <div class="panel-heading">
-                  <h3 class="panel-title">
-                    <strong>
-                      <i class="fa fa-table"></i> Top Recipes</strong>
-                  </h3>
-                </div>
-                <!-- This main panel will hold each of the resulting articles -->
-                <div class="panel-body" id="well-section">
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Footer Region -->
-          <div class="row">
-            <div class="col-sm-12">
-              <!-- Line Break followed by closing -->
-              <hr>
-              <h5 class="text-center">
-                <small>Cause we're so ©fucking hungry.
-                  <i class="fa fa-heart"></i>
-                </small>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <!-- jQuery JS -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <!-- Code to the JavaScript File -->
-        <script src="./main.js"></script>
-      </body>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Recipe Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="./reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="./js/main.js"></script>
+</head>
+<body>
+  
+  <div class="container">
+
+    <div class='sidebar'>
+      <form id="ingredient-form" class="">
+          <label for="ingredient-input">Add a New Ingredient:</label>
+          <input type="text" id="ingredient-input" class="js-input input"><br>
+          <button class="js-add submit"></button>
+      </form>
+      <div class='js-list ingredients-list'>
+
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="recipes">
+        slfjsdlkjflsdkjflskjflsk
+      </div>
+    </div>
+
+
+  </div>
+</body>
 </html>

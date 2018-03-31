@@ -1,0 +1,26 @@
+
+
+.container {
+    display: flex;
+    background-color: coral;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.ingredients-list {
+    background-color: palegreen;
+}
+
+.right-side {
+    background-color: palevioletred;
+    width: 85vw
+}
+
+.sidebar {
+    background-color: palegoldenrod;
+    height: 100%;
+    position: fixed;
+    width: 15vw;
+    left: 0;
+    top: 0;
+}
