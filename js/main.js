@@ -11,6 +11,8 @@ $(document).ready(function(){
 
             newIngredient.attr("data-ingredient", ingredientsList[i]);
 
+            newIngredient.addClass('btn btn-info mr-sm-2');
+
             newIngredient.text(ingredientsList[i]);
 
             $('.js-list').append(newIngredient);
@@ -35,13 +37,18 @@ $(document).ready(function(){
         }).then(function(response){
             console.log(response);
             for (let i = 0; i < response.hits.length; i++){
-                let recipe = $("<div>");
-                //let img = $("<img>");
-                let label = $("<p>");
+                let recipe = $("<div style='width: 18rem;'>");
+                recipe.addClass('card');
+                let img = $("<img>");
+                img.addClass('card-img-top');
+                img.attr('src', response.hits[i].recipe.image);
+                let label = $("<div class='card-body'><p>");
 
                 label.text(response.hits[i].recipe.label);
-                recipe.append(label);
+                recipe.append(img).append(label);
                 $(".recipes").append(recipe);
+                console.log(img);
+
             }
             // let recipe = $("<div>");
             // let img = $("<img>");

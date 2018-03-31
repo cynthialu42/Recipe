@@ -1,25 +1,33 @@
 
-.container {
-    display: flex;
+.main-container {
+    /* display: flex; */
     background-color: coral;
-    width: 100%;
-    justify-content: space-around;
+    margin-left: 20vw;
+    overflow-x: hidden;
+    padding: 0;
+    /* width: 100%; */
+    /* justify-content: space-around; */
 }
 
 .ingredients-list {
     background-color: palegreen;
+    margin: 1em;
 }
 
 .right-side {
     background-color: palevioletred;
-    width: 85vw
+    /* width: 80vw */
 }
 
 .sidebar {
     background-color: palegoldenrod;
     height: 100%;
     position: fixed;
-    width: 15vw;
+    width: 20vw;
     left: 0;
     top: 0;
+}
+
+.submit {
+    margin: 0.25em;
 }

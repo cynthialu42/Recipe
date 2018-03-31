@@ -13,24 +13,30 @@
 </head>
 <body>
   
-  <div class="container">
 
     <div class='sidebar'>
+      <div class="sidebar-header">
+          <h3>Recipe++</h3>
+      </div>
       <form id="ingredient-form" class="">
-          <label for="ingredient-input">Add a New Ingredient:</label>
-          <input type="text" id="ingredient-input" class="js-input input"><br>
-          <button class="js-add submit"></button>
+          <div class="cl-row">
+            <label for="ingredient-input">Add a New Ingredient:</label>
+            <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
+            <button class="btn btn-primary js-add submit">Add</button>
+          </div>
       </form>
       <div class='js-list ingredients-list'>
 
       </div>
     </div>
+  <div class="container main-container">
+        <div class="right-side row">
+          <div class="recipes">
+            
+          </div>
+        </div>
 
-    <div class="right-side">
-      <div class="recipes">
-        
-      </div>
-    </div>
+    
 
 
   </div>
