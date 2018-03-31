@@ -34,6 +34,30 @@ $(document).ready(function(){
             method: "GET"
         }).then(function(response){
             console.log(response);
+            for (let i = 0; i < response.hits.length; i++){
+                let recipe = $("<div>");
+                //let img = $("<img>");
+                let label = $("<p>");
+
+                label.text(response.hits[i].recipe.label);
+                recipe.append(label);
+                $(".recipes").append(recipe);
+            }
+            // let recipe = $("<div>");
+            // let img = $("<img>");
+            
+
+            // let gif = $('<img>');
+            // let rating = $('<p>');
+            // let section = $('<div class = "still-gif" >');
+
+            // let stillGif = result.images.fixed_height_still.url;
+            // let movingGif = result.images.fixed_height.url
+            // let state = "still";
+            // gif.attr("src",stillGif).attr("data-still", stillGif).attr("data-animate", movingGif).attr("data-state", state).addClass("gif-img");
+            // rating.text("Rated: " + result.rating.toUpperCase());
+            // section.append(rating).append(gif);
+            // $('.js-gifs').append(section);
         });
     
     }
@@ -45,8 +69,10 @@ $(document).ready(function(){
         createList();
         console.log('You clicked on the submit button');
         console.log(ingredient);
+        $(".recipes").empty();
         showRecipes();
         $('.js-input').val('');
+
     });
 
 
