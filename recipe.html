@@ -13,31 +13,55 @@
 </head>
 <body>
   
+  
+    
+  <div class="container-fluid main-container">
 
-    <div class='sidebar'>
-      <div class="sidebar-header">
-          <h3>Recipe++</h3>
-      </div>
-      <form id="ingredient-form" class="">
-          <div class="cl-row">
-            <label for="ingredient-input">Add a New Ingredient:</label>
-            <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
-            <button class="btn btn-primary js-add submit">Add</button>
-          </div>
-      </form>
-      <div class='js-list ingredients-list'>
-
-      </div>
+    <div class="">
+      
     </div>
-  <div class="container main-container">
-        <div class="right-side row">
-          <div class="recipes">
-            
+
+
+    <!-- Row to contain main layout - height is set to 100 with Bootstrap h-100 class -->
+    <div class="h-100 row">
+
+        <!-- Sidebar -->
+        <div class='col-md-3 col-sm-12 sidebar'>
+
+          <!-- Sidebar Header -->
+          <div class="sidebar-header">
+              <h3>Recipe++</h3>
           </div>
+      
+          <!-- Input section for ingredients to be entered -->
+          <form id="ingredient-form" class="">
+      
+            <div class="cl-row">
+              <label for="ingredient-input">Add a New Ingredient:</label>
+              <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
+              <button class="btn btn-primary js-add submit">Add</button>
+            </div>
+      
+          </form>
+      
+          <!-- Section for where ingredient buttons will be appended -->
+          <div class='js-list mx-auto mt-1 ingredients-list'>
+
+          </div>
+    
+      </div>
+
+      <!-- The right side of the layout -->
+      <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-violet">
+
+        <!-- Bootstrap cards of the recipes will populate in the div below -->
+        <div class="bg-violet d-flex js-recipes justify-content-around row"> 
+          
         </div>
 
-    
+      </div>
 
+    </div>
 
   </div>
 </body>
