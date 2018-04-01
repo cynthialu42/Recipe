@@ -34,6 +34,44 @@
 .icons{
     float: right;
 }
+.cl-fade{
+    position: relative;
+}
+.cl-fade:hover img{
+  opacity: 0.3;
+}
+
+.cl-fade:hover .test {
+  opacity: 1; 
+}
+
+/*.cl-fade img {
+  padding: 0;
+  width: 100%;
+  display: block;
+  opacity: 1;
+}*/
+
+.cl-fade img,
+.test {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+.test {
+  position: absolute;
+  color: black;
+  left: 0;
+  top: 25%;
+  right: 0;
+  bottom: 35%;
+  text-align: center;
+  opacity: 0;
+  background: pink;
+
+}
 
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------

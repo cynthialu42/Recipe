@@ -45,15 +45,15 @@ $(document).ready(function(){
                 // Create a new div and save it to a variable called recipe
                 let recipe = $("<div style='width: 18rem;'>");
                 // Add a class to the recipe div and give it the class card and a margin
-                recipe.addClass('card col-md-3 m-2');
+                recipe.addClass('cl-fade card col-md-3 m-2');
                 // Create an empty image tag and save it in a variable called img
                 let img = $("<img>");
                 // Add classes to the img tag
                 img.addClass('card-img-top');
                 // Give each img tag a src attribute that contains the image url for each recipe
                 img.attr('src', response.hits[i].recipe.image);
-
-                img.attr('title', "yo");
+                //let test = "hello";
+                //img.attr('title', test);
                 // Create a div with a class of card body AND a p tag and store it in a variable called label
                 let label = $("<div class='card-body'><p>");
                 // Add text to the label that contains the name (or, as defined by the API, the label) from each recipe
@@ -81,8 +81,19 @@ $(document).ready(function(){
                     }
                 }
                 
+                let test = $('<div>');
+                let calories = parseInt(response.hits[i].recipe.calories);
+                let amt = parseInt(response.hits[i].recipe.yield);
+                let calPerServe = Math.floor(calories/amt);
+                // for (let l = 0; l < response.hits[i].recipe.ingredientLines.length; l++){
+                //     let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);
+                //     test.append(ingre);
+                // }
+                test.addClass('test');
+                test.append(calPerServe);
+                //test.text("hello hello hi");
                 // Append the img tag and the label div & p tag to the recipe div
-                recipe.append(icons).append(link).append(label);
+                recipe.append(icons).append(link).append(label).append(test);
                 // Grab the js-recipes class and append the recipe div to it
                 $(".js-recipes").append(recipe);
                 //console.log(img);
