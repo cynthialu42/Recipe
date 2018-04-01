@@ -32,7 +32,8 @@
 }
 
 .icons{
-    float: right;
+    display: flex;
+    justify-content: center;
 }
 .cl-fade{
     position: relative;
@@ -64,12 +65,14 @@
   position: absolute;
   color: black;
   left: 0;
-  top: 25%;
+  top: 20%;
   right: 0;
-  bottom: 35%;
   text-align: center;
   opacity: 0;
   background: pink;
+  font-size: 1em;
+  overflow-y: scroll;
+  height: 55%;
 
 }
 

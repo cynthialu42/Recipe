@@ -2,7 +2,6 @@ $(document).ready(function(){
 
     let ingredientsList = ["carrot"];
 
-
     function createList() {
         $('.js-list').empty();
 
@@ -52,8 +51,8 @@ $(document).ready(function(){
                 img.addClass('card-img-top');
                 // Give each img tag a src attribute that contains the image url for each recipe
                 img.attr('src', response.hits[i].recipe.image);
-                //let test = "hello";
-                //img.attr('title', test);
+                let source = response.hits[i].recipe.source;
+                img.attr('title', source);
                 // Create a div with a class of card body AND a p tag and store it in a variable called label
                 let label = $("<div class='card-body'><p>");
                 // Add text to the label that contains the name (or, as defined by the API, the label) from each recipe
@@ -82,15 +81,16 @@ $(document).ready(function(){
                 }
                 
                 let test = $('<div>');
+                test.append('<p><strong>Ingredients: </strong></p>')
                 let calories = parseInt(response.hits[i].recipe.calories);
                 let amt = parseInt(response.hits[i].recipe.yield);
                 let calPerServe = Math.floor(calories/amt);
-                // for (let l = 0; l < response.hits[i].recipe.ingredientLines.length; l++){
-                //     let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);
-                //     test.append(ingre);
-                // }
+                for (let l = 0; l < response.hits[i].recipe.ingredientLines.length; l++){
+                    let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);
+                    test.append(ingre);
+                }
                 test.addClass('test');
-                test.append(calPerServe);
+                //test.append("Calories/serving: " + calPerServe);
                 //test.text("hello hello hi");
                 // Append the img tag and the label div & p tag to the recipe div
                 recipe.append(icons).append(link).append(label).append(test);
@@ -141,4 +141,5 @@ $(document).ready(function(){
 
     createList();
     //showRecipes();
+ 
 });
