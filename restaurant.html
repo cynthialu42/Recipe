@@ -6,6 +6,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
 <style>
@@ -20,26 +21,37 @@
           margin: 0;
           padding: 0;
         }
-        .banner{
-            width: 100%;
-            height: 200px;
-        }
 
       </style>
 </head>
 <body>
-    <div class="banner">
-    <div id="map"></div>
+
+
+<div class="container-fluid rounded d-flex h-100 w-100">
+   
+    <div class="col-3 h-100 bg-warning"> 
+        <br>
+            <h2 class="text-white">Order a Meal</h2>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary bg-white js-submit" type="button">Submit</button>
+            </div>
+            <input type="text" class="form-control js-search" placeholder="Enter your address here!" aria-label="" aria-describedby="basic-addon1">
+            </div>
+
+    </div>
+
+    <div class="col-9 h-100 w-100">
+        <div class="col-12 h-75 w-100 rounded" id="map"></div>
+        <div class="col-12 h-25 w-100"></div>
+
+    </div>
+
 </div>
 
-<div>
-    <p>Where are you?</p>
-    <input class="js-search"><button class="js-submit">Submit</button>
-</div>
 
-    <script src="js/restaurant.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLu3qEb-a08j4oxG1ooo8ih6l9WBIBYT4&libraries=places">
-    </script>
+<script src="js/restaurant.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLu3qEb-a08j4oxG1ooo8ih6l9WBIBYT4&libraries=places"></script>
 
 </body>
 </html>
