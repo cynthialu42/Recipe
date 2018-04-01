@@ -52,16 +52,40 @@ $(document).ready(function(){
                 img.addClass('card-img-top');
                 // Give each img tag a src attribute that contains the image url for each recipe
                 img.attr('src', response.hits[i].recipe.image);
+
+                img.attr('title', "yo");
                 // Create a div with a class of card body AND a p tag and store it in a variable called label
                 let label = $("<div class='card-body'><p>");
-
                 // Add text to the label that contains the name (or, as defined by the API, the label) from each recipe
                 label.text(response.hits[i].recipe.label);
+                // Add link to recipe image
+                let link = $(`<a href = "${response.hits[i].recipe.url}" target = "_blank" >`); 
+                // Append the image to the link
+                link.append(img);
+                let icons = $('<div class = "icons">');
+                for (let j = 0; j < response.hits[i].recipe.healthLabels.length; j++){
+                    if (response.hits[i].recipe.healthLabels[j] == "Vegan"){
+                        let vegan = $('<i class="fas fa-lg fa-seedling" style="color:#96E941; padding: 2px;"></i>');   
+                        icons.append(vegan);
+                    }
+                    if (response.hits[i].recipe.healthLabels[j] == "Vegetarian"){
+                        let vegetarian = $('<i class="fas fa-lg fa-leaf" style="color:#35BD78; padding: 2px;"></i>');
+                        icons.append(vegetarian);
+                    }
+                    
+                }
+                for (let k = 0; k < response.hits[i].recipe.dietLabels.length; k++){
+                    if(response.hits[i].recipe.dietLabels[k] == "Low-Fat"){
+                        let lowFat = $('<i class="fas fa-lg fa-arrow-alt-circle-down" style="color:#FF7347; padding: 2px;"></i>');
+                        icons.append(lowFat);
+                    }
+                }
+                
                 // Append the img tag and the label div & p tag to the recipe div
-                recipe.append(img).append(label);
+                recipe.append(icons).append(link).append(label);
                 // Grab the js-recipes class and append the recipe div to it
                 $(".js-recipes").append(recipe);
-                console.log(img);
+                //console.log(img);
 
             }
             // let recipe = $("<div>");
