@@ -14,30 +14,49 @@
 <body>
   
 
-    <div class='sidebar'>
-      <div class="sidebar-header">
-          <h3>Recipe++</h3>
-      </div>
-      <form id="ingredient-form" class="">
+    
+  <div class="border border-primary container-fluid main-container">
+    <!-- Row to contain main layout - height is set to 100 with Bootstrap h-100 class -->
+    <div class="h-100 row">
+
+      <!-- Sidebar -->
+      <div class='border border-danger col-3 sidebar'>
+
+        <!-- Sidebar Header -->
+        <div class="border border-danger sidebar-header">
+            <h3>Recipe++</h3>
+        </div>
+
+        <!-- Text input section (with button) for ingredients to be entered -->
+        <form id="ingredient-form" class="border border-success">
+
           <div class="cl-row">
+
             <label for="ingredient-input">Add a New Ingredient:</label>
             <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
             <button class="btn btn-primary js-add submit">Add</button>
-          </div>
-      </form>
-      <div class='js-list ingredients-list'>
 
-      </div>
-    </div>
-  <div class="container main-container">
-        <div class="right-side row">
-          <div class="recipes">
-            
           </div>
+
+        </form>
+
+        <!-- Section for where ingredient buttons will be appended -->
+        <div class='border border-info js-list ingredients-list'>
         </div>
 
-    
+      </div>
 
+      <!-- The right side of the layout -->
+      <div class="col-9 right-side">
+
+        <!-- Bootstrap cards of the recipes will populate in the div below -->
+        <div class="js-recipes row"> 
+          
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 </body>
