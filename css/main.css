@@ -31,9 +31,9 @@
     margin: 0.25em;
 }
 
-.icons{
+.cardTop{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .cl-fade{
     position: relative;
@@ -55,10 +55,10 @@
 
 .cl-fade img,
 .test {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .test {
@@ -73,6 +73,8 @@
   font-size: 1em;
   overflow-y: scroll;
   height: 55%;
+  padding: .5em;
+  border-radius: 5%;
 
 }
 

@@ -54,46 +54,58 @@ $(document).ready(function(){
                 let source = response.hits[i].recipe.source;
                 img.attr('title', source);
                 // Create a div with a class of card body AND a p tag and store it in a variable called label
-                let label = $("<div class='card-body'><p>");
+                let label = $("<div class='card-body text-center'><p>");
                 // Add text to the label that contains the name (or, as defined by the API, the label) from each recipe
                 label.text(response.hits[i].recipe.label);
                 // Add link to recipe image
                 let link = $(`<a href = "${response.hits[i].recipe.url}" target = "_blank" >`); 
                 // Append the image to the link
                 link.append(img);
+
+                let cardTop = $('<div class = "cardTop">');
                 let icons = $('<div class = "icons">');
                 for (let j = 0; j < response.hits[i].recipe.healthLabels.length; j++){
                     if (response.hits[i].recipe.healthLabels[j] == "Vegan"){
-                        let vegan = $('<i class="fas fa-lg fa-seedling" style="color:#96E941; padding: 2px;"></i>');   
+                        let vegan = $('<i class="fas fa-lg fa-seedling" title = "Vegan" style="color:#96E941; padding: 2px;"></i>');   
                         icons.append(vegan);
                     }
                     if (response.hits[i].recipe.healthLabels[j] == "Vegetarian"){
-                        let vegetarian = $('<i class="fas fa-lg fa-leaf" style="color:#35BD78; padding: 2px;"></i>');
+                        let vegetarian = $('<i class="fas fa-lg fa-leaf" title = "Vegetarian" style="color:#35BD78; padding: 2px;"></i>');
                         icons.append(vegetarian);
                     }
                     
                 }
                 for (let k = 0; k < response.hits[i].recipe.dietLabels.length; k++){
                     if(response.hits[i].recipe.dietLabels[k] == "Low-Fat"){
-                        let lowFat = $('<i class="fas fa-lg fa-arrow-alt-circle-down" style="color:#FF7347; padding: 2px;"></i>');
+                        let lowFat = $('<i class="fas fa-lg fa-arrow-alt-circle-down" title = "Low-Fat" style="color:#FF7347; padding: 2px;"></i>');
                         icons.append(lowFat);
                     }
                 }
                 
-                let test = $('<div>');
-                test.append('<p><strong>Ingredients: </strong></p>')
+
                 let calories = parseInt(response.hits[i].recipe.calories);
                 let amt = parseInt(response.hits[i].recipe.yield);
                 let calPerServe = Math.floor(calories/amt);
+                let calTop = $('<div>');
+                calTop.append("Cal: " + calPerServe);
+
+                cardTop.append(calTop).append(icons);
+
+                let ingrHover = $('<div>');
+                ingrHover.append('<p><strong>Ingredients: </strong></p>')
+                
                 for (let l = 0; l < response.hits[i].recipe.ingredientLines.length; l++){
                     let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);
-                    test.append(ingre);
+                    ingrHover.append(ingre);
                 }
-                test.addClass('test');
+                ingrHover.addClass('test');
+
+                let ingredientLink = $(`<a href = "${response.hits[i].recipe.url}" target = "_blank" >`); 
+                ingredientLink.append(ingrHover);
                 //test.append("Calories/serving: " + calPerServe);
                 //test.text("hello hello hi");
                 // Append the img tag and the label div & p tag to the recipe div
-                recipe.append(icons).append(link).append(label).append(test);
+                recipe.append(cardTop).append(link).append(label).append(ingredientLink);
                 // Grab the js-recipes class and append the recipe div to it
                 $(".js-recipes").append(recipe);
                 //console.log(img);
