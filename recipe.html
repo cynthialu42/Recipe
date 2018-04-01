@@ -13,44 +13,49 @@
 </head>
 <body>
   
-
+  
     
-  <div class="border border-primary container-fluid main-container">
+  <div class="container-fluid main-container">
+
+    <div class="">
+      
+    </div>
+
+
     <!-- Row to contain main layout - height is set to 100 with Bootstrap h-100 class -->
     <div class="h-100 row">
 
-      <!-- Sidebar -->
-      <div class='border border-danger col-3 sidebar'>
+        <!-- Sidebar -->
+        <div class='col-md-3 col-sm-12 sidebar'>
 
-        <!-- Sidebar Header -->
-        <div class="border border-danger sidebar-header">
-            <h3>Recipe++</h3>
-        </div>
-
-        <!-- Text input section (with button) for ingredients to be entered -->
-        <form id="ingredient-form" class="border border-success">
-
-          <div class="cl-row">
-
-            <label for="ingredient-input">Add a New Ingredient:</label>
-            <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
-            <button class="btn btn-primary js-add submit">Add</button>
+          <!-- Sidebar Header -->
+          <div class="sidebar-header">
+              <h3>Recipe++</h3>
+          </div>
+      
+          <!-- Input section for ingredients to be entered -->
+          <form id="ingredient-form" class="">
+      
+            <div class="cl-row">
+              <label for="ingredient-input">Add a New Ingredient:</label>
+              <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
+              <button class="btn btn-primary js-add submit">Add</button>
+            </div>
+      
+          </form>
+      
+          <!-- Section for where ingredient buttons will be appended -->
+          <div class='js-list mx-auto mt-1 ingredients-list'>
 
           </div>
-
-        </form>
-
-        <!-- Section for where ingredient buttons will be appended -->
-        <div class='border border-info js-list ingredients-list'>
-        </div>
-
+    
       </div>
 
       <!-- The right side of the layout -->
-      <div class="col-9 right-side">
+      <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-violet">
 
         <!-- Bootstrap cards of the recipes will populate in the div below -->
-        <div class="js-recipes row"> 
+        <div class="bg-violet d-flex js-recipes justify-content-around row"> 
           
         </div>
 

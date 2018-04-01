@@ -14,7 +14,7 @@ $(document).ready(function(){
             newIngredient.attr("data-ingredient", ingredientsList[i]);
 
             // Add classes to the button
-            newIngredient.addClass('btn btn-info mr-sm-2');
+            newIngredient.addClass('btn btn-info my-2 mr-sm-2');
 
             // Give the button text that is equal to the name of the ingredient
             newIngredient.text(ingredientsList[i]);

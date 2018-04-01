@@ -6,27 +6,44 @@
 
 .ingredients-list {
     background-color: palegreen;
-    margin: 1em;
+    margin: 2rem 0;
 }
 
 .m-auto {
     margin: 0 auto;
 }
 
-.right-side {
+.bg-violet {
     background-color: palevioletred;
     /* width: 80vw */
 }
 
 .sidebar {
     background-color: palegoldenrod;
-    /* height: 100%;
+    height: 100%;
     position: fixed;
-    width: 20vw;
+    width: 25vw;
     left: 0;
-    top: 0; */
+    top: 0;
 }
 
 .submit {
     margin: 0.25em;
+}
+
+
+/* ------------------------------------------------------------------
+----------------------------MEDIA QUERIES----------------------------
+--------------------------------------------------------------------*/
+
+/* These rules take effect when the browser's width is 768px or less. */
+@media screen and (max-width: 768px) {
+
+/* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
+.sidebar {
+    height: 50%;
+    position: inherit;
+    width: 100vw;
+}
+
 }
