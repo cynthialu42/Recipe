@@ -139,12 +139,15 @@ $(document).ready(function(){
         // Empty the all of the recipe divs/cards in the right side js-recipes section
         $(".js-recipes").empty();
         // Run showRecipes, which queries our API with all the ingredients in our ingredientsList array
-        showRecipes();
+        //showRecipes();
         // Empty the js-input field
         $('.js-input').val('');
-
     });
 
+    $('.js-submit').on('click', function(event){
+        event.preventDefault();
+        showRecipes();
+    });
 
     createList();
     //showRecipes();

@@ -14,12 +14,12 @@
 }
 
 .bg-violet {
-    background-color: palevioletred;
+    background-color: white;
     /* width: 80vw */
 }
 
 .sidebar {
-    background-color: palegoldenrod;
+    background-color: #FFA56A;
     height: 100%;
     position: fixed;
     width: 25vw;
