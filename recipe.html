@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
 </head>
 <body>
@@ -16,11 +17,6 @@
   
     
   <div class="container-fluid main-container">
-
-    <div class="">
-      
-    </div>
-
 
     <!-- Row to contain main layout - height is set to 100 with Bootstrap h-100 class -->
     <div class="h-100 row">
@@ -48,12 +44,22 @@
           <div class='js-list mx-auto mt-1 ingredients-list'>
 
           </div>
-    
+          
       </div>
 
       <!-- The right side of the layout -->
       <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-violet">
-
+        <div class="instructions">
+            <div class="instruction-text">
+                <p>Don't know what to cook? Let us help! <br>
+                Start entering some ingredients you have at home
+                and we'll find some recipes for you!</p> 
+            </div>
+            <div class="utensil-icon">
+                    <i class="fas fa-utensils fa-10x"></i>
+            </div>
+        </div>
+        
         <!-- Bootstrap cards of the recipes will populate in the div below -->
         <div class="bg-violet d-flex js-recipes justify-content-around row"> 
           
@@ -62,7 +68,11 @@
       </div>
 
     </div>
-
+    <div class="otherOption">
+        <a href="./restaurant.html "><button class = "btn btn-danger wiggle" type = "text">Nah let's order out... <i class="fas fa-wine-glass"></i></button></a>
+    </div>
   </div>
+
+  
 </body>
 </html>

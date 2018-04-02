@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-    let ingredientsList = ["carrot"];
-
+    let ingredientsList = [];
 
     function createList() {
         $('.js-list').empty();
@@ -33,7 +32,6 @@ $(document).ready(function(){
       
         // spaces replaced with %20
         let strIngredientsList = encodeURIComponent(tempStrIngredientsList);
-        //var queryURL = "https://api.edamam.com/search?q=peanut+butter%2C+bread&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a";
         var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a";
 
         $.ajax({
@@ -45,40 +43,82 @@ $(document).ready(function(){
                 // Create a new div and save it to a variable called recipe
                 let recipe = $("<div style='width: 18rem;'>");
                 // Add a class to the recipe div and give it the class card and a margin
-                recipe.addClass('card col-md-3 m-2');
+                recipe.addClass('hover-fade card col-md-3 m-2');
+
                 // Create an empty image tag and save it in a variable called img
                 let img = $("<img>");
                 // Add classes to the img tag
                 img.addClass('card-img-top');
                 // Give each img tag a src attribute that contains the image url for each recipe
                 img.attr('src', response.hits[i].recipe.image);
-                // Create a div with a class of card body AND a p tag and store it in a variable called label
-                let label = $("<div class='card-body'><p>");
+                let source = response.hits[i].recipe.source;
+                img.attr('title', source);
 
+                // Create a div with a class of card body AND a p tag and store it in a variable called label
+                let label = $("<div class='card-body text-center'><p>");
                 // Add text to the label that contains the name (or, as defined by the API, the label) from each recipe
                 label.text(response.hits[i].recipe.label);
-                // Append the img tag and the label div & p tag to the recipe div
-                recipe.append(img).append(label);
+
+                // Add link to recipe image
+                let link = $(`<a href = "${response.hits[i].recipe.url}" target = "_blank" >`); 
+                // Append the image to the link
+                link.append(img);
+
+                // Create the div on the top of the card
+                let cardTop = $('<div class = "cardTop">');
+                // Create the icons
+                let icons = $('<div class = "icons">');
+                // These are for vegan and vegetarian
+                for (let j = 0; j < response.hits[i].recipe.healthLabels.length; j++){
+                    if (response.hits[i].recipe.healthLabels[j] == "Vegan"){
+                        let vegan = $('<i class="fas fa-lg fa-seedling" title = "Vegan" style="color:#96E941; padding: 2px;"></i>');   
+                        icons.append(vegan);
+                    }
+                    if (response.hits[i].recipe.healthLabels[j] == "Vegetarian"){
+                        let vegetarian = $('<i class="fas fa-lg fa-leaf" title = "Vegetarian" style="color:#35BD78; padding: 2px;"></i>');
+                        icons.append(vegetarian);
+                    }
+                }
+                // These are for Low Fat
+                for (let k = 0; k < response.hits[i].recipe.dietLabels.length; k++){
+                    if(response.hits[i].recipe.dietLabels[k] == "Low-Fat"){
+                        let lowFat = $('<i class="fas fa-lg fa-arrow-alt-circle-down" title = "Low-Fat" style="color:#FF7347; padding: 2px;"></i>');
+                        icons.append(lowFat);
+                    }
+                }
+                
+                // Calculate the calories per serving
+                let calories = parseInt(response.hits[i].recipe.calories);
+                let amt = parseInt(response.hits[i].recipe.yield);
+                let calPerServe = Math.floor(calories/amt);
+                // Create a div to hold the calories
+                let calTop = $('<div>');
+                calTop.append("Cal: " + calPerServe);
+
+                // Append the calories and icons to the card top
+                cardTop.append(calTop).append(icons);
+
+                // Hovering over the image displays the ingredients list
+                let ingrHover = $('<div>');
+                ingrHover.append('<p><strong>Ingredients: </strong></p>')
+                // Append ingredients
+                for (let l = 0; l < response.hits[i].recipe.ingredientLines.length; l++){
+                    let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);
+                    ingrHover.append(ingre);
+                }
+                // Allow users to scroll through ingredients list
+                ingrHover.addClass('ingredient-scroll');
+                // Allow users to link to recipe by clicking on the list
+                let ingredientLink = $(`<a href = "${response.hits[i].recipe.url}" target = "_blank" >`); 
+                ingredientLink.append(ingrHover);
+                
+                // Append all card elements to the div
+                recipe.append(cardTop).append(link).append(label).append(ingredientLink);
+
                 // Grab the js-recipes class and append the recipe div to it
                 $(".js-recipes").append(recipe);
-                console.log(img);
 
             }
-            // let recipe = $("<div>");
-            // let img = $("<img>");
-            
-
-            // let gif = $('<img>');
-            // let rating = $('<p>');
-            // let section = $('<div class = "still-gif" >');
-
-            // let stillGif = result.images.fixed_height_still.url;
-            // let movingGif = result.images.fixed_height.url
-            // let state = "still";
-            // gif.attr("src",stillGif).attr("data-still", stillGif).attr("data-animate", movingGif).attr("data-state", state).addClass("gif-img");
-            // rating.text("Rated: " + result.rating.toUpperCase());
-            // section.append(rating).append(gif);
-            // $('.js-gifs').append(section);
         });
     
     }
@@ -86,6 +126,8 @@ $(document).ready(function(){
     $('.js-add').on('click', function(event) {
         // Prevent the default action / page refresh
         event.preventDefault();
+        // Removing the instructions
+        $('.instructions').addClass('hide');
         // Grab the text input from the js-input field and set it to the ingredient variable
         let ingredient = $('.js-input').val().trim();
         // Add the text input of ingredient to our ingredientsList array
@@ -106,4 +148,5 @@ $(document).ready(function(){
 
     createList();
     //showRecipes();
+ 
 });
