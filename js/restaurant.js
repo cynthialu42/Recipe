@@ -12,7 +12,6 @@ $(".js-submit").on("click", function(){
 
 let addressInput = $(".js-search").val().trim();
 let address = encodeURIComponent(addressInput);
-
 let queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBsoxYLBOzXA90YtKwlMYslED2h0Hf7v7A";
 
 $.ajax({
@@ -34,6 +33,7 @@ console.log(lat, lng);
 let map;
 let infowindow;
 let service;
+let marker;
 
 function initMap(lat, lng) {
     // Create a map object and specify the DOM element for display.
@@ -50,16 +50,23 @@ function initMap(lat, lng) {
       radius: 500,
       type: ['restaurant']
     }, callback);
-  }
+  };
 
-  service.getDetails({
-    placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
-  }, function(place, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-      });
+  function placeDetailsByPlaceId(service, map, infowindow) {
+    // Create and send the request to obtain details for a specific place,
+    // using its Place ID.
+    let request = {
+      placeId: document.getElementById('place-id').value
+    };
+  
+    service.getDetails(request, function (place, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        // If the request succeeds, draw the place location on the map
+        // as a marker, and register an event to handle a click on the marker.
+        marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
 
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -68,7 +75,7 @@ function initMap(lat, lng) {
         infowindow.open(map, this);
       });
     }
-  });
+  });}
 
   function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -80,7 +87,7 @@ function initMap(lat, lng) {
 
   function createMarker(place) {
     var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
     });
