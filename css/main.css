@@ -35,14 +35,14 @@
     display: flex;
     justify-content: space-between;
 }
-.cl-fade{
+.hover-fade{
     position: relative;
 }
-.cl-fade:hover img{
+.hover-fade:hover img{
   opacity: 0.3;
 }
 
-.cl-fade:hover .test {
+.hover-fade:hover .ingredient-scroll {
   opacity: 1; 
 }
 
@@ -53,15 +53,15 @@
   opacity: 1;
 }*/
 
-.cl-fade img,
-.test {
+.hover-fade-fade img,
+.ingredient-scroll {
   -webkit-transition: opacity 0.3s ease-out;
   -moz-transition: opacity 0.3s ease-out;
   -o-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
 
-.test {
+.ingredient-scroll {
   position: absolute;
   color: black;
   left: 0;
@@ -74,10 +74,39 @@
   overflow-y: scroll;
   height: 55%;
   padding: .5em;
-  border-radius: 5%;
+  border-radius: 3%;
 
 }
 
+.otherOption{
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 99;
+}
+
+.instructions{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 2em 1em 1em 1em;
+    font-size: 3em;
+    position: relative;
+    justify-content: center;
+}
+
+.instruction-text{
+    position: absolute;
+    z-index: 99;
+    margin-top: 2em;
+
+}
+.utensil-icon{
+    opacity: .3;
+}
+.hide{
+    display: none;
+}
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/

@@ -44,7 +44,7 @@ $(document).ready(function(){
                 // Create a new div and save it to a variable called recipe
                 let recipe = $("<div style='width: 18rem;'>");
                 // Add a class to the recipe div and give it the class card and a margin
-                recipe.addClass('cl-fade card col-md-3 m-2');
+                recipe.addClass('hover-fade card col-md-3 m-2');
                 // Create an empty image tag and save it in a variable called img
                 let img = $("<img>");
                 // Add classes to the img tag
@@ -98,7 +98,7 @@ $(document).ready(function(){
                     let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);
                     ingrHover.append(ingre);
                 }
-                ingrHover.addClass('test');
+                ingrHover.addClass('ingredient-scroll');
 
                 let ingredientLink = $(`<a href = "${response.hits[i].recipe.url}" target = "_blank" >`); 
                 ingredientLink.append(ingrHover);
@@ -133,6 +133,8 @@ $(document).ready(function(){
     $('.js-add').on('click', function(event) {
         // Prevent the default action / page refresh
         event.preventDefault();
+
+        $('.instructions').addClass('hide');
         // Grab the text input from the js-input field and set it to the ingredient variable
         let ingredient = $('.js-input').val().trim();
         // Add the text input of ingredient to our ingredientsList array
