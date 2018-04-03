@@ -9,13 +9,16 @@ h1,p {
 
 body {
     margin: 20px;
-    opacity: 0.6;
     
 }
 .row {
-    background-color: whitesmoke;
+    background-color: rgba(255,255,255,0.6);
     border: 1px solid black;
+    min-height: 700px;
 }
  
-
+.btn {
+color: black;
+padding: 30px;
+ }
 
