@@ -147,22 +147,24 @@ $(document).ready(function(){
     $('.js-add').on('click', function(event) {
         // Prevent the default action / page refresh
         event.preventDefault();
-        
         // Grab the text input from the js-input field and set it to the ingredient variable
         let ingredient = $('.js-input').val().trim();
-        // Add the text input of ingredient to our ingredientsList array
-        ingredientsList.push(ingredient);
-        // Run createList, which appends all our ingredient buttons to the sidebar
-        createList();
-        // Log the ingredient to the console
-        console.log(ingredient);
-        // Empty the all of the recipe divs/cards in the right side js-recipes section
-        $(".js-recipes").empty();
-        // Run showRecipes, which queries our API with all the ingredients in our ingredientsList array
-        //showRecipes();
-        // Empty the js-input field
+        if (ingredient !== ""){
+            // Add the text input of ingredient to our ingredientsList array
+            ingredientsList.push(ingredient);
+            // Run createList, which appends all our ingredient buttons to the sidebar
+            createList();
+            // Log the ingredient to the console
+            console.log(ingredient);
+            // Empty the all of the recipe divs/cards in the right side js-recipes section
+            $(".js-recipes").empty();
+            // Run showRecipes, which queries our API with all the ingredients in our ingredientsList array
+            //showRecipes();
+            // Empty the js-input field
+
+            $('.js-input').val('');
+        }
         
-        $('.js-input').val('');
     });
 
     $('.js-submit').on('click', function(event){
