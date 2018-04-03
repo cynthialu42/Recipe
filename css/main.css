@@ -1,11 +1,36 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'brazil-font';
+    src: url('./../fonts/BrazilFood3.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'wednesday';
+    src: url('./../fonts/Wednesday.ttf') format('truetype');
+}
+
 
 .main-container {
     background-color: coral;
     height: 100vh;
 }
 
+.header-bg {
+    /* background-color: rgb(189, 60, 0); */
+    background-color: firebrick;
+}
+
+.header-font {
+    font-family: 'wednesday', arial;
+}
+
+.header-size {
+    font-size: 6rem;
+}
+
 .ingredients-list {
-    background-color: palegreen;
+    /* background-color: palegreen; */
     margin: 2rem 0;
 }
 
@@ -13,9 +38,43 @@
     margin: 0 auto;
 }
 
+.name-height {
+    height: 27vh;
+}
+
 .bg-violet {
     background-color: white;
     /* width: 80vw */
+}
+
+.button-border {
+    border: 2px solid white;
+}
+
+.button-color {
+    background-color:chocolate;
+    color: white;
+}
+
+.button-color-two {
+    background-color: rgb(151, 35, 35);
+    color: white;
+}
+
+.ing-btn-hover:hover {
+    border-color: rgb(145, 53, 1);
+}
+
+.rec-btn-hover:hover {
+    border-color: chocolate;
+}
+
+.fluid-header {
+    font-size: calc(35px + (100 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.shadow {
+    text-shadow: 2px 2px 8px rgb(202, 124, 124);
 }
 
 .sidebar {
@@ -81,6 +140,28 @@
     transform: scale(1.1);
 }
 
+.legend{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    z-index: 99;
+
+    padding: .5em;
+
+}
+
+.legend-icon{
+    opacity: 1;
+}
+
+.next{
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 99;
+    padding: .5em;
+
+}
 .instructions{
     display: flex;
     flex-wrap: wrap;
@@ -104,6 +185,10 @@
     display: none;
 }
 
+.white {
+    color: white;
+}
+
 .wiggle:hover {
     animation: shake .75s; 
     animation-iteration-count: infinite; 
@@ -123,12 +208,34 @@
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+.point{
+    padding: 0em 1em 0em 1em;
+}
+.point:hover {
+    animation: point .75s; 
+    animation-iteration-count: infinite; 
+    
+}
+
+@keyframes point {
+    0% { transform: translate(4px, 0px);}
+    20% { transform: translate(-4px, 0px); }
+    40% { transform: translate(4px, 0px); }
+    60% { transform: translate(-4px, 0px); }
+    80% { transform: translate(4px, 0px); }
+    100% { transform: translate(4px, 0px); }
+}
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/
 
 /* These rules take effect when the browser's width is 768px or less. */
 @media screen and (max-width: 768px) {
+
+.fluid-header {
+    font-size: 6rem;
+}
 
 /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
 .sidebar {
