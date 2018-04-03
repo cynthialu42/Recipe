@@ -6,3 +6,16 @@ h1,p {
     color: black;
     text-align: center;
 }
+
+body {
+    margin: 20px;
+    opacity: 0.6;
+    
+}
+.row {
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+ 
+
+
