@@ -2,6 +2,8 @@ $(document).ready(function(){
 
     let ingredientsList = [];
 
+    let from = 0; 
+    let to = 10;
     function createList() {
         $('.js-list').empty();
 
@@ -13,26 +15,44 @@ $(document).ready(function(){
             newIngredient.attr("data-ingredient", ingredientsList[i]);
 
             // Add classes to the button
-            newIngredient.addClass('btn btn-info my-2 mr-sm-2');
+            newIngredient.addClass('btn btn-info my-2 mr-sm-2 ingredient-btn');
 
             // Give the button text that is equal to the name of the ingredient
-            newIngredient.text(ingredientsList[i]);
+            newIngredient.text(ingredientsList[i] + " x");
 
             // Add the button to the element with the class of js-list
             $('.js-list').append(newIngredient);
         }
     }
 
+    function removeBtn(){
+        var removeIngr = $(this).attr("data-ingredient");
+        console.log(removeIngr);
+        let index = 0;
+        for (let i = 0; i < ingredientsList.length; i++){
+            if (ingredientsList[i] === removeIngr){
+                index = i;
+            }
+        }
+        var removed = ingredientsList.splice(index, 1);
+        createList();
+        $(".js-recipes").empty();
+        from = 0;
+        to = 10;
+        showRecipes(from, to);
+    }
     // need to push all ingredients to an array
-    function showRecipes(){
+    function showRecipes(from, to){
 
         // String version of our ingredient array
         let tempStrIngredientsList = ingredientsList.join(" ");
         // console.log(strIngredientsList);
       
         // spaces replaced with %20
+        let start = "&from=" + from;
+        let end = "&to=" + to;
         let strIngredientsList = encodeURIComponent(tempStrIngredientsList);
-        var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a";
+        var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a" + start + end;
 
         $.ajax({
             url: queryURL,
@@ -146,8 +166,21 @@ $(document).ready(function(){
 
     $('.js-submit').on('click', function(event){
         event.preventDefault();
-        showRecipes();
+        $('.next').removeClass('hide');
+        showRecipes(from, to);
     });
+
+    $('.js-next-button').on('click', function(event){
+        event.preventDefault();
+        console.log('here');
+        from += 10;
+        to += 10;
+        $(".js-recipes").empty();
+        showRecipes(from, to);
+
+    });
+
+    $(document).on("click", ".ingredient-btn", removeBtn);
 
     createList();
     //showRecipes();
