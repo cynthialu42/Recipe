@@ -229,6 +229,24 @@
     80% { transform: translate(4px, 0px); }
     100% { transform: translate(4px, 0px); }
 }
+.sidebar-header{
+    position: relative;
+}
+.recipehamster{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 25%;
+}
+.peekinghamster{
+    width: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+.hamster{
+    width: 100%;
+}
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/
@@ -236,15 +254,23 @@
 /* These rules take effect when the browser's width is 768px or less. */
 @media screen and (max-width: 768px) {
 
-.fluid-header {
-    font-size: 6rem;
-}
+    .fluid-header {
+        font-size: 6rem;
+    }
 
-/* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
-.sidebar {
-    height: 50%;
-    position: inherit;
-    width: 100vw;
-}
-
+    /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
+    .sidebar {
+        height: 50%;
+        position: inherit;
+        width: 100vw;
+    }
+    .peekinghamster{
+        width: 25%;
+        position: absolute;
+        bottom: 0;
+        left: 70%;
+    }
+    .recipehamster{
+        display: none;
+    }
 }

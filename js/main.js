@@ -147,8 +147,7 @@ $(document).ready(function(){
     $('.js-add').on('click', function(event) {
         // Prevent the default action / page refresh
         event.preventDefault();
-        // Removing the instructions
-        $('.instructions').addClass('hide');
+        
         // Grab the text input from the js-input field and set it to the ingredient variable
         let ingredient = $('.js-input').val().trim();
         // Add the text input of ingredient to our ingredientsList array
@@ -162,12 +161,17 @@ $(document).ready(function(){
         // Run showRecipes, which queries our API with all the ingredients in our ingredientsList array
         //showRecipes();
         // Empty the js-input field
+        
         $('.js-input').val('');
     });
 
     $('.js-submit').on('click', function(event){
         event.preventDefault();
         $('.next').removeClass('hide');
+        // Removing the instructions
+        $('.instructions').addClass('hide');
+        $(".recipehamster").addClass('hide');
+        $(".peekinghamster").removeClass('hide');
         showRecipes(from, to);
     });
 
