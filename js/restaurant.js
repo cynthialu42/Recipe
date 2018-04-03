@@ -34,6 +34,10 @@ let map;
 let infowindow;
 let service;
 let marker;
+let results;
+let request;
+let address;
+
 
 function initMap(lat, lng) {
     // Create a map object and specify the DOM element for display.
@@ -47,7 +51,7 @@ function initMap(lat, lng) {
     
     service.nearbySearch({
       location: {lat: lat, lng: lng},
-      radius: 500,
+      radius: 1000,
       type: ['restaurant']
     }, callback);
   };
@@ -55,9 +59,10 @@ function initMap(lat, lng) {
   function placeDetailsByPlaceId(service, map, infowindow) {
     // Create and send the request to obtain details for a specific place,
     // using its Place ID.
-    let request = {
+    request = {
       placeId: document.getElementById('place-id').value
     };
+    
   
     service.getDetails(request, function (place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -72,8 +77,11 @@ function initMap(lat, lng) {
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
           'Place ID: ' + place.place_id + '<br>' +
           place.formatted_address + '</div>');
-        infowindow.open(map, this);
+        infowindow.open(map, this);  
+   
+
       });
+
     }
   });}
 
@@ -95,12 +103,19 @@ function initMap(lat, lng) {
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
+ console.log(place)
+ $(".rName").text(place.name);
+ $(".rAddress").text(place.vicinity);
+ $(".rOpen").text("Open now? " + place.opening_hours.open_now);
+ $(".rRating").text("Rating: " + place.rating);
+ $(".rPrice").text("Price level: " + place.price_level);
+ $(".rImg").attr("src", place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 150}));
+ 
+ console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
+
     });
 
     
   };
-
-  
-  
 
 })
