@@ -16,7 +16,7 @@ $(document).ready(function(){
 
             // Add classes to the button
 
-            newIngredient.addClass('btn btn-info button-border my-2 mr-sm-2 ingredient-btn');
+            newIngredient.addClass('btn btn-success button-border my-2 mr-sm-2 ingredient-btn');
     
             // Give the button text that is equal to the name of the ingredient
             newIngredient.text(ingredientsList[i] + " x");
@@ -121,7 +121,7 @@ $(document).ready(function(){
 
                 // Hovering over the image displays the ingredients list
                 let ingrHover = $('<div>');
-                ingrHover.append('<p><strong>Ingredients: </strong></p>')
+                ingrHover.append('<p>Ingredients: </p>')
                 // Append ingredients
                 for (let l = 0; l < response.hits[i].recipe.ingredientLines.length; l++){
                     let ingre = $(`<p> ${response.hits[i].recipe.ingredientLines[l]}</p>`);

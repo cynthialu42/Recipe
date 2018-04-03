@@ -12,17 +12,19 @@
 
 
 .main-container {
-    background-color: coral;
     height: 100vh;
 }
 
 .header-bg {
-    /* background-color: rgb(189, 60, 0); */
-    background-color: firebrick;
+    background-color: rgb(189, 60, 0);
+    /* background-color: rgb(150, 29, 29); */
+    /* background-color: #e67300; */
 }
 
 .header-font {
     font-family: 'wednesday', arial;
+    color: #540804;
+    
 }
 
 .header-size {
@@ -43,8 +45,9 @@
 }
 
 .bg-violet {
-    background-color: white;
+    /* background-color: white; */
     /* width: 80vw */
+    background-image: url(../images/wood_pattern.png);
 }
 
 .button-border {
@@ -70,7 +73,8 @@
 }
 
 .sidebar {
-    background-color: #FFA56A;
+    /* background-color: #FFA56A; */
+    background-color: #ffb366;
     height: 100%;
     position: fixed;
     width: 25vw;
@@ -113,7 +117,7 @@
   right: 0;
   text-align: center;
   opacity: 0;
-  background: tomato;
+  background: #1DA83F;
   font-size: 1em;
   overflow-y: scroll;
   height: 55%;
@@ -137,7 +141,6 @@
     bottom: 1em;
     left: 1em;
     z-index: 99;
-
     padding: .5em;
 
 }
@@ -171,7 +174,7 @@
 
 }
 .utensil-icon{
-    opacity: .3;
+    opacity: .5;
 }
 .hide{
     display: none;
