@@ -61,6 +61,14 @@
     color: white;
 }
 
+.ing-btn-hover:hover {
+    border-color: rgb(145, 53, 1);
+}
+
+.rec-btn-hover:hover {
+    border-color: chocolate;
+}
+
 .fluid-header {
     font-size: calc(35px + (100 - 14) * ((100vw - 300px) / (1600 - 300)));
 }

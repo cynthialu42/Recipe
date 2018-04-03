@@ -16,7 +16,7 @@ $(document).ready(function(){
 
             // Add classes to the button
 
-            newIngredient.addClass('btn btn-info button-border my-2 mr-sm-2 ingredient-btn');
+            newIngredient.addClass('btn btn-success button-border my-2 mr-sm-2 ingredient-btn');
     
             // Give the button text that is equal to the name of the ingredient
             newIngredient.text(ingredientsList[i] + " x");
