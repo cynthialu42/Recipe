@@ -7,6 +7,10 @@ h1,p {
     text-align: center;
 }
 
+.h1{
+    font-size: 30px;
+}
+
 body {
     margin: 20px;
     
@@ -14,11 +18,21 @@ body {
 .row {
     background-color: rgba(255,255,255,0.6);
     border: 1px solid black;
-    min-height: 700px;
+    min-height: 800px;
 }
  
 .btn {
 color: black;
 padding: 30px;
- }
+}
+
+.footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    padding: 5px;
+    margin: 0;
+}
 
