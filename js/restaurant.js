@@ -46,6 +46,8 @@ function initMap(lat, lng) {
       zoom: 16
     });
 
+    $("#map").addClass("border border-danger");
+
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     
@@ -103,15 +105,25 @@ function initMap(lat, lng) {
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
- console.log(place)
- $(".rName").text(place.name);
- $(".rAddress").text(place.vicinity);
- $(".rOpen").text("Open now? " + place.opening_hours.open_now);
- $(".rRating").text("Rating: " + place.rating);
- $(".rPrice").text("Price level: " + place.price_level);
- $(".rImg").attr("src", place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 150}));
  
- console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
+      console.log(place)
+      
+      let open;
+      if (place.opening_hours.open_now === "true"){
+        open = "Open!"
+      }
+      else{
+        open = "Closed."
+      }
+      $(".js-cardDisplay").removeClass("d-none");
+      $(".rName").text(place.name);
+      $(".rAddress").text(place.vicinity);
+      $(".rOpen").text("Open/Closed: " + open);
+      $(".rRating").text("Rating out of 5: " + place.rating);
+      $(".rPrice").text("Price level: " + place.price_level);
+      $(".rImg").attr("src", place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 150}));
+      
+      console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
 
     });
 

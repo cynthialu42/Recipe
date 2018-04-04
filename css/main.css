@@ -89,6 +89,16 @@
     left: 0;
     top: 0;
 }
+.sidebar-restaurant {
+    height: 100%;
+    position: fixed;
+    width: 25vw;
+    left: 0;
+    top: 0;
+}
+.bg-orange{
+    background-color: darkorange;
+}
 
 .submit {
     margin: 0.25em;
@@ -247,6 +257,26 @@
 .hamster{
     width: 100%;
 }
+.hamsterSm{
+    width: 75%;
+    height: 75%;
+   
+}
+.restauranthamster{
+    position: fixed;
+    bottom: 75px;
+    right: 0px;
+    width: 20%;
+}
+.search-btn{
+    background-color: darkorange;
+    color: white;
+}
+
+.search-border:hover{
+    border-color: white;
+}
+
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/
