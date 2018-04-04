@@ -1,5 +1,6 @@
 body {
-    background-image: url("../images/photo-1466637574441-749b8f19452f.jpg");
+    background: url("../images/photo-1466637574441-749b8f19452f.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 h1,p {

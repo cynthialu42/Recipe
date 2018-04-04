@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
@@ -31,9 +31,9 @@
 
 <div class="container-fluid rounded d-flex h-100 w-100">
    
-    <div class="col-3 h-100 bg-warning"> 
+    <div class="col-3 h-100 bg-danger"> 
         <br>
-            <h2 class="text-white">Order a Meal</h2>
+            <h2 class="text-white">Find a Place to Eat</h2>
             <div class="input-group mb-3">
             <div class="input-group-prepend">
             <button class="btn btn-outline-secondary bg-white js-submit" type="button">Submit</button>
@@ -44,15 +44,30 @@
     </div>
 
     <div class="col-9 h-100 w-100">
-        <div class="col-12 h-75 w-100 rounded" id="map"></div>
-        <div class="col-12 h-25 w-100"></div>
+        <br>
+        <div class="col-12 h-50 w-100 rounded" id="map"></div>
+        <div class="col-12 h-50 w-100">    
+            <br>    
+            <div class="card" style="width: 18rem;">
+                    <img class="card-img-top rImg" src="" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title rName"></h5>
+                          <h6 class="card-subtitle mb-2 text-muted rAddress"></h6>
+                          <p class="card-text rOpen"></p>
+                          <p class="card-text rRating"></p>
+                          <p class="card-text rPrice"></p>
+
+                        </div>
+                      </div>
+            
+            <div class="otherOption">
+        <a href="./recipe.html "><button class = "btn btn-danger wiggle" type = "text">Actually...I'm broke... <i class="fas fa-utensil-spoon"></i></button></a>
+    </div>
+        </div>
 
     </div>
-    
+
 </div>
-<!-- <div class="otherOption">
-        <a href="./recipe.html "><button class = "btn btn-danger" type = "text">Nah let's cook... <i class="fas fa-utensil-spoon"></i></button></a>
-</div> -->
 
 <script src="js/restaurant.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLu3qEb-a08j4oxG1ooo8ih6l9WBIBYT4&libraries=places"></script>

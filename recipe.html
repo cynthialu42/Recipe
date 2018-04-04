@@ -22,27 +22,30 @@
     <div class="h-100 row">
 
         <!-- Sidebar -->
-        <div class='col-md-3 col-sm-12 sidebar'>
+        <div class='col-md-3 col-sm-12 p-0 sidebar'>
 
           <!-- Sidebar Header -->
-          <div class="sidebar-header">
-              <h3>Recipe++</h3>
+          <div class="header-bg name-height sidebar-header">
+              <h3 class="fluid-header header-font shadow white">Recipe++</h3>
+              <div class="peekinghamster hide">
+                  <img class = "hamster" src = "./images/recipetophamster.png">
+              </div>
           </div>
-      
+          
           <!-- Input section for ingredients to be entered -->
-          <form id="ingredient-form" class="">
+          <form id="ingredient-form" class="m-2">
       
             <div class="cl-row">
               <label for="ingredient-input">Add a New Ingredient:</label>
               <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
-              <button class="btn btn-primary js-add submit">Add Ingredient</button>
-              <button class="btn btn-info js-submit">Get Recipes!</button>
+              <button class="btn button-border button-color ing-btn-hover js-add submit">Add Ingredient</button>
+              <button class="btn button-border button-color-two rec-btn-hover js-submit">Get Recipes!</button>
             </div>
       
           </form>
       
           <!-- Section for where ingredient buttons will be appended -->
-          <div class='js-list mx-auto mt-1 ingredients-list'>
+          <div class='js-list mx-auto mt-1 p-2 ingredients-list'>
 
           </div>
           
@@ -52,12 +55,15 @@
       <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-violet">
         <div class="instructions">
             <div class="instruction-text">
-                <p>What's in your fridge? <br>
+                <p class="header-font">What's in your fridge? <br>
                 Enter some ingredients you have at home
                 and we'll find recipes for you!</p> 
             </div>
             <div class="utensil-icon">
-                    <i class="fas fa-utensils fa-10x" style = 'color: #F59D00;'></i>
+                <i class="fas fa-utensils fa-10x" style = 'color: #FFA56A;'></i><!--#F59D00-->
+            </div>
+            <div class="recipehamster">
+                <img class = "hamster" src = "./images/recipehamster.png">
             </div>
         </div>
         
@@ -71,6 +77,20 @@
     </div>
     <div class="otherOption">
         <a href="./restaurant.html "><button class = "btn btn-danger wiggle" type = "text">Nah let's order out... <i class="fas fa-wine-glass"></i></button></a>
+    </div>
+    <div class="legend">
+      <div class="seedling">
+          <i class="fas fa-lg fa-seedling legend-icon" title = "Vegan" style="color:#96E941; padding: 2px;"></i><span style = "color: rgb(104, 20, 20);"> - Vegan</span>
+      </div>
+      <div class="leaf">
+          <i class="fas fa-lg fa-leaf legend-icon" title = "Vegetarian" style="color:#35BD78; padding: 2px;"></i><span style = "color: rgb(104, 20, 20);"> - Vegetarian</span>
+      </div>
+      <div class="down">
+          <i class="fas fa-lg fa-arrow-alt-circle-down legend-icon" title = "Low-Fat" style="color:#FF7347; padding: 2px;"></i><span style = "color: rgb(104, 20, 20);"> - Low-Fat</span>
+      </div>
+    </div>
+    <div class="next hide">
+        <button class = "btn btn-success point js-next-button"><i class="fas fa-angle-double-right fa-2x"></i></button>
     </div>
   </div>
 
