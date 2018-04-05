@@ -69,8 +69,7 @@ $(document).ready(function(){
                 // Create a new div and save it to a variable called recipe
                 let recipe = $("<div style='width: 18rem;'>");
                 // Add a class to the recipe div and give it the class card and a margin
-                recipe.addClass('hover-fade card col-md-3 m-2');
-
+                recipe.addClass('hover-fade card col-md-3 m-2 bounceIn');
                 // Create an empty image tag and save it in a variable called img
                 let img = $("<img>");
                 // Add classes to the img tag
