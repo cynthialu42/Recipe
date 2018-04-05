@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url("../images/photo-1466637574441-749b8f19452f.jpg") no-repeat center center fixed;
+    background: url("../images/basil-delicious-food-459469.jpg") no-repeat center center fixed;
     background-size: cover;
     
 }
@@ -13,11 +13,12 @@ body {
 }
 
 .title {
-    font-size: 80px;
+    padding: 20px;
+    font-size: 150px;
 }
 
 .lead {
-    font-size: 30px;
+    font-size: 50px;
 }
 
 h1,p {
@@ -32,7 +33,7 @@ h1,p {
 .row {
     background-color: rgba(255,255,255,0.6);
     border: 1px solid black;
-    min-height: 750px;
+    min-height: 100vh;
 }
  
 .btn {
