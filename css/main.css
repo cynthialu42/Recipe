@@ -89,6 +89,16 @@
     left: 0;
     top: 0;
 }
+.sidebar-restaurant {
+    height: 100%;
+    position: fixed;
+    width: 25vw;
+    left: 0;
+    top: 0;
+}
+.bg-orange{
+    background-color: darkorange;
+}
 
 .submit {
     margin: 0.25em;
@@ -247,6 +257,7 @@
 .hamster{
     width: 100%;
 }
+<<<<<<< HEAD
 
 .footer {
     position: fixed;
@@ -256,6 +267,26 @@
     clear: both;
     padding: 5px;
     text-align:center;
+=======
+.hamsterSm{
+    width: 75%;
+    height: 75%;
+   
+}
+.restauranthamster{
+    position: fixed;
+    bottom: 75px;
+    right: 0px;
+    width: 20%;
+}
+.search-btn{
+    background-color: darkorange;
+    color: white;
+}
+
+.search-border:hover{
+    border-color: white;
+>>>>>>> 023471a62b77441039bee86ff73319793784b5e2
 }
 
 /* ------------------------------------------------------------------
