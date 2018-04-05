@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/animate.css" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
 </head>
@@ -28,7 +29,7 @@
           <div class="header-bg name-height sidebar-header">
               <h3 class="fluid-header header-font shadow white">Recipe++</h3>
               <div class="peekinghamster hide">
-                  <img class = "hamster" src = "./images/recipetophamster.png">
+                  <img class = "hamster bounceIn" src = "./images/recipetophamster.png">
               </div>
           </div>
           
@@ -57,19 +58,16 @@
 
           </div>
 
-        <button class="btn btn-danger button-border hide js-you-decide m-2">You Decide!</button>
-        <button class="btn btn-info button-border hide js-results-back m-2">Get my Results Back</button>
-
-
-          
-          
+            <button class="btn btn-danger button-border hide js-you-decide m-2">You Decide!</button>
+            <button class="btn btn-info button-border hide js-results-back m-2">Get my Results Back</button>
+    
       </div>
 
       <!-- The right side of the layout -->
       <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-violet">
         <div class="instructions">
             <div class="instruction-text">
-                <p class="header-font">What's in your fridge? <br>
+                <p class="header-font bounceIn">What's in your fridge? <br>
                 Enter some ingredients you have at home
                 and we'll find recipes for you!</p> 
             </div>
@@ -77,7 +75,9 @@
                 <i class="fas fa-utensils fa-10x" style = 'color: #FFA56A;'></i><!--#F59D00-->
             </div>
             <div class="recipehamster">
-                <img class = "hamster" src = "./images/recipehamster.png">
+                <img class = "hamster bounceIn" src = "./images/recipehamster.png"
+                    onmouseover="this.src='./images/recipetophamster.png'"
+                    onmouseout="this.src='./images/recipehamster.png'" alt="">
             </div>
         </div>
         
@@ -109,7 +109,7 @@
   </div>
 
   <footer class="footer">
-    <p>Copyright © 2018 Recipe</p>
+    <p>© 2018 Recipe++</p>
   </footer> 
 </body>
 </html>

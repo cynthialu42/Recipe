@@ -16,11 +16,60 @@
     40% { box-shadow: 0 0 800px rgb(189, 60, 0); }
     60% { box-shadow: 0 0 800px rgb(189, 60, 0); }
     100% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
-  }
+}
+.hamster:hover{
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
   
-  .button-glow {
-    animation: glowing 3000ms infinite;
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      -webkit-transform: scale3d(0.97, 0.97, 0.97);
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
   }
+.button-glow {
+    animation: glowing 3000ms infinite;
+}
 
 .main-container {
     height: 100vh;
@@ -82,6 +131,7 @@
     /* background-color: white; */
     /* width: 80vw */
     background-image: url(../images/hip-square.png);
+
 }
 .button-border {
     border: 2px solid white;
@@ -91,7 +141,10 @@
     background-color:chocolate;
     color: white;
 }
-
+.search-button-color{
+    background-color: rgb(151, 35, 35);
+    color: white;
+}
 .button-color-two {
     background-color: rgb(151, 35, 35);
     color: white;
@@ -302,8 +355,10 @@
     bottom: 0;
     width: 100%;
     clear: both;
-    padding: 5px;
     text-align:center;
+    font-family: 'wednesday', arial;
+    color: #540804;
+    font-size: 1.1em;
 }
 
 .hamsterSm {
@@ -342,6 +397,10 @@
         left: 70%;
     }
     .recipehamster{
+        display: none;
+    }
+
+    .restauranthamster{
         display: none;
     }
 }

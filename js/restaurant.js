@@ -9,6 +9,8 @@ let lng;
 
 $(".js-submit").on("click", function(){
     event.preventDefault();
+    $(".peekinghamster").removeClass('hide');
+    
     swap();
 
 let addressInput = $(".js-search").val().trim();
@@ -28,7 +30,7 @@ initMap(lat, lng);
 console.log(lat, lng);
     });
 
-
+    $("#ingredient-input").val('');
 });
 
 let map;
@@ -43,6 +45,7 @@ let address;
 function swap(){
   if($(".instructions").css('display')!="none"){
     $("#map").show().siblings(".instructions").hide();
+    $(".js-rest-card").show();
   }
 };
 
