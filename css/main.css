@@ -10,6 +10,17 @@
     src: url('./../fonts/Wednesday.ttf') format('truetype');
 }
 
+/* Attempting glowing effect */
+@keyframes glowing {
+    0% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
+    40% { box-shadow: 0 0 800px rgb(189, 60, 0); }
+    60% { box-shadow: 0 0 800px rgb(189, 60, 0); }
+    100% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
+  }
+  
+  .button-glow {
+    animation: glowing 3000ms infinite;
+  }
 
 .main-container {
     height: 100vh;

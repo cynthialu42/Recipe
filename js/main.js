@@ -4,6 +4,8 @@ $(document).ready(function(){
 
     let from = 0; 
     let to = 10;
+    let random = -1;
+     
     function createList() {
         $('.js-list').empty();
 
@@ -40,10 +42,10 @@ $(document).ready(function(){
         $(".js-recipes").empty();
         from = 0;
         to = 10;
-        showRecipes(from, to);
+        showRecipes(from, to, random);
     }
     // need to push all ingredients to an array
-    function showRecipes(from, to){
+    function showRecipes(from, to, random){
 
         // String version of our ingredient array
         let tempStrIngredientsList = ingredientsList.join(" ");
@@ -60,6 +62,9 @@ $(document).ready(function(){
             method: "GET"
         }).then(function(response){
             console.log(response);
+            if (random == -1) {
+                console.log('random equals -1');
+    
             for (let i = 0; i < response.hits.length; i++){
                 // Create a new div and save it to a variable called recipe
                 let recipe = $("<div style='width: 18rem;'>");
@@ -70,6 +75,7 @@ $(document).ready(function(){
                 let img = $("<img>");
                 // Add classes to the img tag
                 img.addClass('card-img-top');
+
                 // Give each img tag a src attribute that contains the image url for each recipe
                 img.attr('src', response.hits[i].recipe.image);
                 let source = response.hits[i].recipe.source;
@@ -140,6 +146,85 @@ $(document).ready(function(){
                 $(".js-recipes").append(recipe);
 
             }
+        }
+
+        // If a user clicks to generate a random recipe...
+        else {
+            console.log('it went to else');
+            console.log('random is: ' + random);
+            let recipe = $("<div style='width: 18rem;'>");
+            recipe.addClass('button-glow hover-fade card col-md-3 m-2');
+            let img = $("<img>");
+            img.addClass('card-img-top');
+            img.attr('src', response.hits[random].recipe.image);
+            let source = response.hits[random].recipe.source;
+            img.attr('title', source);
+
+            // Create a div with a class of card body AND a p tag and store it in a variable called label
+            let label = $("<div class='card-body text-center'><p>");
+            // Add text to the label that contains the name (or, as defined by the API, the label) from each recipe
+            label.text(response.hits[random].recipe.label);
+
+            // Add link to recipe image
+            let link = $(`<a href = "${response.hits[random].recipe.url}" target = "_blank" >`); 
+            // Append the image to the link
+            link.append(img);
+
+            // Create the div on the top of the card
+            let cardTop = $('<div class = "cardTop">');
+            // Create the icons
+            let icons = $('<div class = "icons">');
+            
+            // These are for vegan and vegetarian
+            for (let j = 0; j < response.hits[random].recipe.healthLabels.length; j++){
+                if (response.hits[random].recipe.healthLabels[j] == "Vegan"){
+                    let vegan = $('<i class="fas fa-lg fa-seedling" title = "Vegan" style="color:#96E941; padding: 2px;"></i>');   
+                    icons.append(vegan);
+                }
+                if (response.hits[random].recipe.healthLabels[j] == "Vegetarian"){
+                    let vegetarian = $('<i class="fas fa-lg fa-leaf" title = "Vegetarian" style="color:#35BD78; padding: 2px;"></i>');
+                    icons.append(vegetarian);
+                }
+            }
+            // These are for Low Fat
+            for (let k = 0; k < response.hits[random].recipe.dietLabels.length; k++){
+                if(response.hits[random].recipe.dietLabels[k] == "Low-Fat"){
+                    let lowFat = $('<i class="fas fa-lg fa-arrow-alt-circle-down" title = "Low-Fat" style="color:#FF7347; padding: 2px;"></i>');
+                    icons.append(lowFat);
+                }
+            }
+            
+            // Calculate the calories per serving
+            let calories = parseInt(response.hits[random].recipe.calories);
+            let amt = parseInt(response.hits[random].recipe.yield);
+            let calPerServe = Math.floor(calories/amt);
+            // Create a div to hold the calories
+            let calTop = $('<div>');
+            calTop.append("Cal: " + calPerServe);
+
+            // Append the calories and icons to the card top
+            cardTop.append(calTop).append(icons);
+
+            // Hovering over the image displays the ingredients list
+            let ingrHover = $('<div>');
+            ingrHover.append('<p>Ingredients: </p>')
+            // Append ingredients
+            for (let x = 0; x < response.hits[random].recipe.ingredientLines.length; x++){
+                let ingre = $(`<p> ${response.hits[random].recipe.ingredientLines[x]}</p>`);
+                ingrHover.append(ingre);
+            }
+            // Allow users to scroll through ingredients list
+            ingrHover.addClass('ingredient-scroll');
+            // Allow users to link to recipe by clicking on the list
+            let ingredientLink = $(`<a href = "${response.hits[random].recipe.url}" target = "_blank" >`); 
+            ingredientLink.append(ingrHover);
+            
+            // Append all card elements to the div
+            recipe.append(cardTop).append(link).append(label).append(ingredientLink);
+
+            // Grab the js-recipes class and append the recipe div to it
+            $(".js-recipes").append(recipe);
+        }
         });
     
     }
@@ -167,6 +252,25 @@ $(document).ready(function(){
         
     });
 
+    $('.js-you-decide').on('click', function(event) {
+        event.preventDefault();
+        $('.js-recipes').empty();
+        let randomNumber = Math.floor(Math.random() * 10);
+        // console.log('random number:' + randomNumber);
+        showRecipes(from, to, randomNumber);
+        $('.js-you-decide').addClass('hide');
+        $('.js-results-back').removeClass('hide');
+        
+        console.log('clicked on you decide');
+    });
+
+    $('.js-results-back').on('click', function(event) {
+        event.preventDefault();
+        $('.js-results-back').addClass('hide');
+        $('.js-you-decide').removeClass('hide');
+        showRecipes(from, to, random);
+    });
+
     $('.js-submit').on('click', function(event){
         event.preventDefault();
         $('.next').removeClass('hide');
@@ -174,7 +278,8 @@ $(document).ready(function(){
         $('.instructions').addClass('hide');
         $(".recipehamster").addClass('hide');
         $(".peekinghamster").removeClass('hide');
-        showRecipes(from, to);
+        $('.js-you-decide').removeClass('hide');
+        showRecipes(from, to, random);
     });
 
     $('.js-next-button').on('click', function(event){
@@ -183,7 +288,7 @@ $(document).ready(function(){
         from += 10;
         to += 10;
         $(".js-recipes").empty();
-        showRecipes(from, to);
+        showRecipes(from, to, random);
 
     });
 
