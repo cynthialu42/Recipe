@@ -28,7 +28,7 @@
 <body>
 
 
-<div class="container-fluid d-flex h-100 pl-0 pr-0">
+<div class="container-fluid d-flex h-100 pl-0 pr-0 main-container">
    
     <div class="h-100 w-100 mt-0 bg-danger"> 
 
@@ -39,40 +39,47 @@
         </div>
 
         <div class="bg-danger h-75>">
-            <br>
+        
         <form>
             <div class="form-inline ml-2 mr-2">
-              <label for="exampleInputEmail1" class="text-white mt-2"><h5>Find a Place to Eat</h5></label>
-              <input type="text input" class="form-control js-search" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address here!">
+              <label for="exampleInputEmail1" class="text-white mt-2 ingredient-input"><h3>Find a Place to Eat</h3></label>
+              <input type="text input" class="form-control js-search" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter address here!">
               <button type="submit" class="btn bg-orange text-white search-border ml-2 mr-2 js-submit">Search</button>
-              <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             
           </form>
         </div>
 
 
-
-
-
     </div>
 
-    <div class="col-9 h-100 w-100 bg-violet">
-        <br>
-        <div class="col-12 h-50 w-100 rounded" id="map"></div>
-        <div class="col-12 h-50 w-100">    
-            <br>    
+    <div class="col-9 h-100 w-100 bg-pink">
+        
+            <div class="instructions">
+                    <div class="instruction-text">
+                        <p class="header-font">What's there to eat in your neighborhood?
+                           Use the search bar over there and find out!
+                        </p> 
+                    </div>
+                </div>
 
-            <div class="card js-cardDisplay w-75 d-none" style="width: 38rem;">
-                <h5 class="card-header">Why not try...</h5>
+            <div class="col-12 h-50 w-100 rounded mt-2 mb-2" id="map" style="display: none"></div>
+
+
+        <div class="col-12 h-50 w-100">    
+            
+
+
+            <div class="card js-cardDisplay d-none" style="width: 40rem; height: 17rem">
+                <h5 class="card-header ingredient-input">Why not try...</h5>
                 <div class="d-flex">
                     <img class="card-img-top rImg p-1 w-50" src="" alt="Card image cap">
                     <div class="card-body w-50">
-                      <h5 class="card-title rName w-50"></h5>
-                      <h6 class="card-subtitle mb-2 text-muted rAddress w-100"></h6>
-                      <p class="card-text rOpen w-100"></p>
-                      <p class="card-text rRating w-100"></p>
-                      <p class="card-text rPrice w-100"></p>
+                      <h5 class="header-font font-weight-bold rName w-100"></h5>
+                      <h6 class="header-font mb-2 text-muted rAddress w-100"></h6>
+                      <p class="header-font rOpen w-100"></p>
+                      <p class="header-font rRating w-100"></p>
+                      <p class="header-font rPrice w-100"></p>
 
                         </div>
                       </div>

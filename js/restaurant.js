@@ -9,6 +9,7 @@ let lng;
 
 $(".js-submit").on("click", function(){
     event.preventDefault();
+    swap();
 
 let addressInput = $(".js-search").val().trim();
 let address = encodeURIComponent(addressInput);
@@ -39,6 +40,12 @@ let request;
 let address;
 
 
+function swap(){
+  if($(".instructions").css('display')!="none"){
+    $("#map").show().siblings(".instructions").hide();
+  }
+};
+
 function initMap(lat, lng) {
     // Create a map object and specify the DOM element for display.
     map = new google.maps.Map(document.getElementById('map'), {
@@ -47,6 +54,7 @@ function initMap(lat, lng) {
     });
 
     $("#map").addClass("border border-danger");
+    
 
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);

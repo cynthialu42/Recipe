@@ -61,7 +61,11 @@
     /* width: 80vw */
     background-image: url(../images/wood_pattern.png);
 }
-
+.bg-pink {
+    /* background-color: white; */
+    /* width: 80vw */
+    background-image: url(../images/hip-square.png);
+}
 .button-border {
     border: 2px solid white;
 }
@@ -299,7 +303,6 @@
 .search-border:hover{
     border-color: white;
 }
-
 
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
