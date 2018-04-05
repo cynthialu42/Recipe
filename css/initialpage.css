@@ -2,23 +2,27 @@
     font-family: 'wednesday';
     src: url('../fonts/Wednesday.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'brazil-font';
+    src: url('./../fonts/BrazilFood3.ttf') format('truetype');
+}
 body {
     background: url("../images/basil-delicious-food-459469.jpg") no-repeat center center fixed;
     background-size: cover;
     
 }
-.lead,.title {
+.lead,.title,.btn {
     font-family: 'wednesday', arial;
 }
 
 .title {
-    padding: 20px;
-    font-size: 150px;
+    padding: .25em 0em .25em 0em;
+    font-size: 8em;
 }
 
 .lead {
-    font-size: 50px;
+    font-size: 3em;
+    margin-bottom: .5em;
 }
 
 h1,p {
@@ -30,15 +34,36 @@ h1,p {
     font-size: 50px; 
 }
 
-.row {
+.transparent {
     background-color: rgba(255,255,255,0.6);
-    border: 1px solid black;
     min-height: 100vh;
+    width: 75%;
+    margin: auto;
 }
  
 .btn {
-color: black;
-padding: 30px;
+    font-family: 'brazil-font',arial;
+    color: white;
+    font-weight: bold;
+    padding: .5em;
+    font-size: 2em;
+    margin: 0em 2em; 
+   
+
+}
+.hamster-logo{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+
+}
+
+.hamster-image{
+    width: 50%;
+    height: 50%;
 }
 
 .footer {
@@ -47,7 +72,9 @@ padding: 30px;
     bottom: 0;
     width: 100%;
     clear: both;
-    padding: 5px;
-    margin: 0;
+    text-align:center;
+    font-family: 'wednesday', arial;
+    color: #540804;
+    font-size: 1.1em;
 }
 
