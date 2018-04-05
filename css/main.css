@@ -274,7 +274,17 @@
 .hamster{
     width: 100%;
 }
-.hamsterSm{
+
+.footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    padding: 5px;
+    text-align:center;
+
+.hamsterSm {
     width: 75%;
     height: 75%;
    
@@ -285,14 +295,11 @@
     right: 0px;
     width: 20%;
 }
-.search-btn{
-    background-color: darkorange;
-    color: white;
-}
 
 .search-border:hover{
     border-color: white;
 }
+
 
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------

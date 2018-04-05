@@ -28,22 +28,36 @@
 <body>
 
 
-<div class="container-fluid d-flex h-100">
+<div class="container-fluid d-flex h-100 pl-0 pr-0">
    
-    <div class="col-3 h-100 bg-danger"> 
-        <br>
-            <h2 class="text-white">Find a Place to Eat</h2>
-            <div class="input-group mb-3">
-            <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary bg-white js-submit" type="button">Submit</button>
+    <div class="h-100 w-100 mt-0 bg-danger"> 
+
+        <div class="bg-orange h-25 w-100">         
+            <div class="name-height bg-orange">
+            <h3 class="fluid-header header-font shadow white">Recipe++</h3>
             </div>
-            <input type="text" class="form-control js-search" placeholder="Enter your address here!" aria-label="" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="bg-danger h-75>">
+            <br>
+        <form>
+            <div class="form-inline ml-2 mr-2">
+              <label for="exampleInputEmail1" class="text-white mt-2"><h5>Find a Place to Eat</h5></label>
+              <input type="text input" class="form-control js-search" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address here!">
+              <button type="submit" class="btn bg-orange text-white search-border ml-2 mr-2 js-submit">Search</button>
+              <small id="emailHelp" class="form-text text-muted"></small>
             </div>
+            
+          </form>
+        </div>
+
+
+
 
 
     </div>
 
-    <div class="col-9 h-100 w-100">
+    <div class="col-9 h-100 w-100 bg-violet">
         <br>
         <div class="col-12 h-50 w-100 rounded" id="map"></div>
         <div class="col-12 h-50 w-100">    
@@ -76,6 +90,10 @@
     </div>
 
 </div>
+
+<footer class="footer">
+    <p>Copyright © 2018 Recipe</p>
+  </footer> 
 
 <script src="js/restaurant.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLu3qEb-a08j4oxG1ooo8ih6l9WBIBYT4&libraries=places"></script>
