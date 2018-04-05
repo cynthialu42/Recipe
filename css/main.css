@@ -36,6 +36,18 @@
     margin: 2rem 0;
 }
 
+.ingredient-input{
+    font-family: 'brazil-font', arial;
+    color: rgb(151, 35, 35);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.brazil{
+    /* font-family: 'brazil-font', arial; */
+    color: rgb(104, 20, 20);
+    /* font-size: 1.5em; */
+}
 .m-auto {
     margin: 0 auto;
 }
@@ -62,6 +74,10 @@
 .button-color-two {
     background-color: rgb(151, 35, 35);
     color: white;
+    margin-top: 1em;
+    width: 100%;
+    font-family: 'wednesday', arial;
+    font-size: 1.5em;
 }
 
 .ing-btn-hover:hover {
@@ -79,6 +95,7 @@
 .shadow {
     text-shadow: 2px 2px 8px rgb(202, 124, 124);
 }
+
 
 .sidebar {
     /* background-color: #FFA56A; */

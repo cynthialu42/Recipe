@@ -43,7 +43,7 @@ $(document).ready(function(){
         showRecipes(from, to);
     }
     // need to push all ingredients to an array
-    function showRecipes(from, to){
+    function showRecipes(from, to, random){
 
         // String version of our ingredient array
         let tempStrIngredientsList = ingredientsList.join(" ");
@@ -166,7 +166,6 @@ $(document).ready(function(){
         }
         
     });
-
     $('.js-submit').on('click', function(event){
         event.preventDefault();
         $('.next').removeClass('hide');
