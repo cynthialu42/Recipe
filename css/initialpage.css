@@ -1,6 +1,17 @@
+@font-face {
+    font-family: 'wednesday';
+    src: url('../fonts/Wednesday.ttf') format('truetype');
+}
+
 body {
     background: url("../images/photo-1466637574441-749b8f19452f.jpg") no-repeat center center fixed;
     background-size: cover;
+    
+}
+.lead,.title {
+    font-family: 'wednesday', arial;
+    font-size: px;
+
 }
 
 h1,p {
@@ -10,12 +21,9 @@ h1,p {
 
 .h1{
     font-size: 30px;
-}
-
-body {
-    margin: 20px;
     
 }
+
 .row {
     background-color: rgba(255,255,255,0.6);
     border: 1px solid black;
