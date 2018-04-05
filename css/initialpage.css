@@ -4,14 +4,21 @@
 }
 
 body {
-    background: url("../images/photo-1466637574441-749b8f19452f.jpg") no-repeat center center fixed;
+    background: url("../images/basil-delicious-food-459469.jpg") no-repeat center center fixed;
     background-size: cover;
     
 }
 .lead,.title {
     font-family: 'wednesday', arial;
-    font-size: 50px;
+}
 
+.title {
+    padding: 20px;
+    font-size: 150px;
+}
+
+.lead {
+    font-size: 50px;
 }
 
 h1,p {
@@ -20,14 +27,13 @@ h1,p {
 }
 
 .h1{
-    font-size: 30px;
-    
+    font-size: 50px; 
 }
 
 .row {
     background-color: rgba(255,255,255,0.6);
     border: 1px solid black;
-    min-height: 800px;
+    min-height: 100vh;
 }
  
 .btn {
