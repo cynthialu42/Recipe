@@ -266,6 +266,7 @@ $(document).ready(function(){
 
     $('.js-results-back').on('click', function(event) {
         event.preventDefault();
+        $('.js-recipes').empty();   
         $('.js-results-back').addClass('hide');
         $('.js-you-decide').removeClass('hide');
         showRecipes(from, to, random);
