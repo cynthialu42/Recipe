@@ -20,7 +20,13 @@
     /* background-color: rgb(150, 29, 29); */
     /* background-color: #e67300; */
 }
+.rest-header-color{
+    background: #81171B;
+}
 
+.rest-sidebar-color{
+    background: #C75146;
+}
 .header-font {
     font-family: 'wednesday', arial;
     color: #540804;
