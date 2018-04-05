@@ -10,8 +10,14 @@ body {
 }
 .lead,.title {
     font-family: 'wednesday', arial;
-    font-size: 50px;
+}
 
+.title {
+    font-size: 80px;
+}
+
+.lead {
+    font-size: 30px;
 }
 
 h1,p {
@@ -20,14 +26,13 @@ h1,p {
 }
 
 .h1{
-    font-size: 30px;
-    
+    font-size: 50px; 
 }
 
 .row {
     background-color: rgba(255,255,255,0.6);
     border: 1px solid black;
-    min-height: 800px;
+    min-height: 735px;
 }
  
 .btn {
