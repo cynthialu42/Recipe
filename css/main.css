@@ -268,14 +268,11 @@
     right: 0px;
     width: 20%;
 }
-.search-btn{
-    background-color: darkorange;
-    color: white;
-}
 
 .search-border:hover{
     border-color: white;
 }
+
 
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
