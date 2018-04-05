@@ -257,7 +257,6 @@
 .hamster{
     width: 100%;
 }
-<<<<<<< HEAD
 
 .footer {
     position: fixed;
@@ -267,8 +266,8 @@
     clear: both;
     padding: 5px;
     text-align:center;
-=======
-.hamsterSm{
+
+.hamsterSm {
     width: 75%;
     height: 75%;
    
@@ -286,7 +285,6 @@
 
 .search-border:hover{
     border-color: white;
->>>>>>> 023471a62b77441039bee86ff73319793784b5e2
 }
 
 /* ------------------------------------------------------------------
