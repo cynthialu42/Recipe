@@ -1,9 +1,53 @@
+@font-face {
+    font-family: 'wednesday';
+    src: url('../fonts/Wednesday.ttf') format('truetype');
+}
+
 body {
-    background: url("../images/photo-1466637574441-749b8f19452f.jpg") no-repeat center center fixed;
+    background: url("../images/basil-delicious-food-459469.jpg") no-repeat center center fixed;
     background-size: cover;
+    
+}
+.lead,.title {
+    font-family: 'wednesday', arial;
+}
+
+.title {
+    padding: 20px;
+    font-size: 150px;
+}
+
+.lead {
+    font-size: 50px;
 }
 
 h1,p {
     color: black;
     text-align: center;
 }
+
+.h1{
+    font-size: 50px; 
+}
+
+.row {
+    background-color: rgba(255,255,255,0.6);
+    border: 1px solid black;
+    min-height: 100vh;
+}
+ 
+.btn {
+color: black;
+padding: 30px;
+}
+
+.footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    padding: 5px;
+    margin: 0;
+}
+
