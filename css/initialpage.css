@@ -16,13 +16,13 @@ body {
 }
 
 .title {
-    padding: .25em 0em .25em 0em;
+    margin: .25em 0em 0em 0em;
     font-size: 8em;
 }
 
 .lead {
-    font-size: 3em;
-    margin-bottom: .5em;
+    font-size: 2em;
+    margin-top: .5em;
 }
 
 h1,p {
@@ -37,7 +37,7 @@ h1,p {
 .transparent {
     background-color: rgba(255,255,255,0.6);
     min-height: 100vh;
-    width: 75%;
+    width: 80%;
     margin: auto;
 }
  
@@ -57,13 +57,13 @@ h1,p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: .5em;
+ 
 
 }
 
 .hamster-image{
-    width: 50%;
-    height: 50%;
+    width: 90%;
+    height: 90%;
 }
 
 .footer {
