@@ -18,6 +18,7 @@ let address;
 $(".js-submit").on("click", function(){
     event.preventDefault();
     $(".peekinghamster").removeClass('hide'); 
+
     swap();
 
     //Assign user inputs to local variables

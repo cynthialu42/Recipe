@@ -347,7 +347,7 @@ html, body {
 .recipehamster{
     position: fixed;
     bottom: 50px;
-    right: 50px;
+    right: 0px;
     width: 25%;
 }
 .peekinghamster{
@@ -375,6 +375,7 @@ html, body {
 .hamsterSm {
     width: 75%;
     height: 75%; 
+
 }
 .restauranthamster{
     position: fixed;
