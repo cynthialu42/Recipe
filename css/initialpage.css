@@ -48,7 +48,7 @@ h1,p {
     padding: .5em;
     font-size: 2em;
     margin: 0em 2em; 
-   
+    border: 2px solid white;
 
 }
 .hamster-logo{
@@ -77,4 +77,3 @@ h1,p {
     color: #540804;
     font-size: 1.1em;
 }
-
