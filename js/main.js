@@ -152,7 +152,7 @@ $(document).ready(function(){
             console.log('it went to else');
             console.log('random is: ' + random);
             let recipe = $("<div style='width: 18rem;'>");
-            recipe.addClass('button-glow hover-fade card col-md-3 m-2');
+            recipe.addClass('hover-fade card col-md-3 m-2 position-absolute roll-in-bottom');
             let img = $("<img>");
             img.addClass('card-img-top');
             img.attr('src', response.hits[random].recipe.image);
