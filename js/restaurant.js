@@ -139,7 +139,7 @@ function createMarker(place) {
         //conditional to convert hours data from true/false to open/closed in display
         
         let open;
-        if (place.opening_hours.open_now === "true"){
+        if (place.opening_hours.open_now === true){
           open = "Open!"
         }
         else{
