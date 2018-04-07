@@ -209,6 +209,14 @@ html, body {
     font-size: calc(35px + (100 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
+.fluid-instructions {
+    font-size: calc(25px + (60 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.fluid-utensil {
+    font-size: calc(150px + (500 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
 .shadow {
     text-shadow: 2px 2px 8px rgb(202, 124, 124);
 }
@@ -313,7 +321,8 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    margin: 2em 1em 1em 1em;
+    margin: 2em 1em 1em 0;
+    max-height: 15vh;
     font-size: 3em;
     position: relative;
     justify-content: center;
@@ -325,9 +334,14 @@ html, body {
     margin-top: 2em;
 
 }
-.utensil-icon{
+.utensil-icon {
     opacity: .5;
 }
+
+.utensil-sizing {
+    font-size: 15rem;
+}
+
 .hide{
     display: none;
 }
@@ -429,15 +443,19 @@ html, body {
 --------------------------------------------------------------------*/
 
 /* These rules take effect when the browser's width is 768px or less. */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
     .fluid-header {
         font-size: 6rem;
     }
 
+    .fluid-utensil {
+        font-size: calc(300px + (500 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+
     /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
     .sidebar {
-        height: 50%;
+        height: 100%;
         position: inherit;
         width: 100vw;
     }
@@ -451,4 +469,5 @@ html, body {
     .restauranthamster{
         display: none;
     }
+
 }
