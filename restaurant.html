@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Recipe Search</title>
+  <title>Recipe++ : Restaurant Search</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
@@ -25,17 +25,13 @@
         }
     </style>
 </head>
-
 <body>
     
   <div class="container-fluid main-container">
-
     <!-- Row to contain main layout - height is set to 100 with Bootstrap h-100 class -->
     <div class="h-100 row">
-
         <!-- Sidebar -->
         <div class='col-md-3 col-sm-12 p-0 sidebar rest-sidebar-color' style = "background: #C75146;">
-
           <!-- Sidebar Header -->
           <div class="header-bg name-height sidebar-header rest-header-color">
               <h3 class="fluid-header header-font shadow white">Recipe++</h3>
@@ -62,7 +58,6 @@
           </form>
     
       </div>
-
       <!-- The right side of the layout -->
       <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-pink">
         <div class="instructions w-100">
@@ -77,11 +72,11 @@
         </div>
         
         <div class="col-12 h-50 w-100 rounded mt-2 mb-2" id="map" style="display: none"></div>
-        <div class="col-md-9 col-sm-12 h-50 w-100 js-rest-card" style="display: none">    
+        <div class="col-md-9 col-sm-12 w-100 js-rest-card" style="display: none">    
             <div class="card js-cardDisplay d-none" >
                 <h5 class="card-header ingredient-input">Why not try...</h5>
                 <div class="d-flex">
-                    <img class="card-img-top rImg p-1 w-50" style="height: 75%; margin-top: auto; margin-bottom: auto" src="" alt="Card image cap">
+                    <img class="card-img-top rImg p-1 w-50" style="height: 100%; margin-top: auto; margin-bottom: auto" src="" alt="Card image cap">
                     <div class="card-body w-50">
                         <h5 class="header-font font-weight-bold rName w-100"></h5>
                         <h6 class="header-font mb-2 text-muted rAddress w-100"></h6>
@@ -100,22 +95,17 @@
         </div>
         
         
-
       </div>
-
     </div>
     <div class="otherOption">
         <a href="./recipe.html "><button class = "btn btn-danger wiggle" type = "text">Actually...I'm broke... <i class="fas fa-utensils"></i></button></a>
     </div>
     
   </div>
-
   <footer class="footer">
     <p>© 2018 Recipe++</p>
   </footer> 
   <script src="js/restaurant.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLu3qEb-a08j4oxG1ooo8ih6l9WBIBYT4&libraries=places"></script>
-
 </body>
-
 </html>

@@ -1,15 +1,12 @@
 /* Fonts */
-
 @font-face {
     font-family: 'brazil-font';
     src: url('./../fonts/BrazilFood3.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'wednesday';
     src: url('./../fonts/Wednesday.ttf') format('truetype');
 }
-
 /* Attempting glowing effect */
 @keyframes glowing {
     0% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
@@ -17,7 +14,6 @@
     60% { box-shadow: 0 0 800px rgb(189, 60, 0); }
     100% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
 }
-
 @-webkit-keyframes roll-in-bottom {
     0% {
       -webkit-transform: translateY(800px) rotate(540deg);
@@ -30,7 +26,6 @@
       opacity: 1;
     }
 }
-
 @keyframes roll-in-bottom {
     0% {
       -webkit-transform: translateY(800px) rotate(540deg);
@@ -43,12 +38,10 @@
       opacity: 1;
     }
 }
-
 .roll-in-bottom {
     -webkit-animation: roll-in-bottom 0.6s ease-out both, glowing 3000ms infinite;
             animation: roll-in-bottom 0.6s ease-out both, glowing 3000ms infinite;
 }
-
 .hamster:hover{
     -webkit-animation-duration: .75s;
     animation-duration: .75s;
@@ -99,25 +92,20 @@
       transform: scale3d(1, 1, 1);
     }
   }
-
 .button-glow {
     animation: glowing 3000ms infinite;
 }
-
 #map {
     height: 100%;
 }
-
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
-
 .main-container {
     height: 100vh;
 }
-
 .header-bg {
     background-color: rgb(189, 60, 0);
     /* background-color: rgb(150, 29, 29); */
@@ -126,7 +114,6 @@ html, body {
 .rest-header-color{
     background: #81171B;
 }
-
 .rest-sidebar-color{
     background: #C75146;
 }
@@ -135,23 +122,19 @@ html, body {
     color: #540804;
     
 }
-
 .header-size {
     font-size: 6rem;
 }
-
 .ingredients-list {
     /* background-color: palegreen; */
     margin: 2rem 0;
 }
-
 .ingredient-input{
     font-family: 'brazil-font', arial;
     color: rgb(151, 35, 35);
     font-size: 2em;
     font-weight: bold;
 }
-
 .brazil{
     /* font-family: 'brazil-font', arial; */
     color: rgb(104, 20, 20);
@@ -160,11 +143,9 @@ html, body {
 .m-auto {
     margin: 0 auto;
 }
-
 .name-height {
     height: 27vh;
 }
-
 .bg-violet {
     /* background-color: white; */
     /* width: 80vw */
@@ -174,12 +155,10 @@ html, body {
     /* background-color: white; */
     /* width: 80vw */
     background-image: url(../images/hip-square.png);
-
 }
 .button-border {
     border: 2px solid white;
 }
-
 .button-color {
     background-color:chocolate;
     color: white;
@@ -196,32 +175,24 @@ html, body {
     font-family: 'wednesday', arial;
     font-size: 1.5em;
 }
-
 .ing-btn-hover:hover {
     border-color: rgb(145, 53, 1);
 }
-
 .rec-btn-hover:hover {
     border-color: chocolate;
 }
-
 .fluid-header {
     font-size: calc(35px + (100 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
-
 .fluid-instructions {
     font-size: calc(25px + (60 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
-
 .fluid-utensil {
     font-size: calc(150px + (500 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
-
 .shadow {
     text-shadow: 2px 2px 8px rgb(202, 124, 124);
 }
-
-
 .sidebar {
     /* background-color: #FFA56A; */
     background-color: #ffb366;
@@ -241,11 +212,9 @@ html, body {
 .bg-orange{
     background-color: darkorange;
 }
-
 .submit {
     margin: 0.25em;
 }
-
 .cardTop{
     display: flex;
     justify-content: space-between;
@@ -256,11 +225,9 @@ html, body {
 .hover-fade:hover img{
   opacity: 0.3;
 }
-
 .hover-fade:hover .ingredient-scroll {
   opacity: 1; 
 }
-
 .hover-fade-fade img,
 .ingredient-scroll {
   -webkit-transition: opacity 0.3s ease-out;
@@ -268,7 +235,6 @@ html, body {
   -o-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
-
 .ingredient-scroll {
   position: absolute;
   color: white;
@@ -283,9 +249,7 @@ html, body {
   height: 55%;
   padding: .5em;
   border-radius: 3%;
-
 }
-
 .otherOption{
     position: fixed;
     bottom: 1em;
@@ -295,27 +259,22 @@ html, body {
 .otherOption:hover{
     transform: scale(1.1);
 }
-
 .legend{
     position: fixed;
     bottom: 1em;
     left: 1em;
     z-index: 99;
     padding: .5em;
-
 }
-
 .legend-icon{
     opacity: 1;
 }
-
 .next{
     position: fixed;
     top: 1em;
     right: 1em;
     z-index: 99;
     padding: .5em;
-
 }
 .instructions{
     display: flex;
@@ -327,38 +286,25 @@ html, body {
     position: relative;
     justify-content: center;
 }
-
 .instruction-text{
     position: absolute;
     z-index: 99;
     margin-top: 2em;
-
 }
 .utensil-icon {
     opacity: .5;
 }
-
 .utensil-sizing {
     font-size: 15rem;
 }
-
-
-
 .white {
     color: white;
 }
-
 .wiggle:hover {
     animation: shake .75s; 
     animation-iteration-count: infinite; 
     
 }
-
-.d-flex {
-    height: 40vh;
-    
-}
-
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -372,7 +318,6 @@ html, body {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-
 .point{
     padding: 0em 1em 0em 1em;
 }
@@ -381,7 +326,6 @@ html, body {
     animation-iteration-count: infinite; 
     
 }
-
 @keyframes point {
     0% { transform: translate(4px, 0px);}
     20% { transform: translate(-4px, 0px); }
@@ -405,14 +349,12 @@ html, body {
     bottom: 0;
     left: 10px;
 }
-
 .peekinghamster:hover{
     transform: scale(1.2);
 }
 .hamster{
     width: 100%;
 }
-
 .footer {
     position: fixed;
     z-index: 1;
@@ -424,11 +366,9 @@ html, body {
     color: #540804;
     font-size: 1.1em;
 }
-
 .hamsterSm {
     width: 75%;
     height: 75%; 
-
 }
 .restauranthamster{
     position: fixed;
@@ -436,14 +376,9 @@ html, body {
     right: 0px;
     width: 20%;
 }
-
 .search-border:hover{
     border-color: white;
 }
-
-<<<<<<< HEAD
-
-=======
 .spinning-icon{
     display: block;
     flex-wrap: wrap;
@@ -456,26 +391,20 @@ html, body {
     justify-content: center;
     color: rgb(189, 60, 0);
 }
-
 .hide{
     display: none;
 }
->>>>>>> 34b3962819a19dbf1290dab3ea9a3bd8e1c8558e
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/
-
 /* These rules take effect when the browser's width is 768px or less. */
 @media screen and (max-width: 767px) {
-
     .fluid-header {
         font-size: 6rem;
     }
-
     .fluid-utensil {
         font-size: 17rem;
     }
-
     /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
     .sidebar {
         height: 100%;
@@ -488,9 +417,7 @@ html, body {
     .recipehamster{
         display: none;
     }
-
     .restauranthamster{
         display: none;
     }
-
 }

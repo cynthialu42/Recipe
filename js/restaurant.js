@@ -134,12 +134,7 @@ function createMarker(place) {
   google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
-<<<<<<< HEAD
       
- 
-=======
-
->>>>>>> 34b3962819a19dbf1290dab3ea9a3bd8e1c8558e
       console.log(place)
       
         //conditional to convert hours data from true/false to open/closed in display
