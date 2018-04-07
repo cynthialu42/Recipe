@@ -13,6 +13,7 @@ let results;
 let request;
 let address;
 
+
 //On button click, initiate the apps principle functions and gets data from API
 
 $(".js-submit").on("click", function(){
@@ -95,9 +96,8 @@ function placeDetailsByPlaceId(service, map, infowindow) {
         //Registers an event to handle a click on the marker.
         marker = new google.maps.Marker({
           map: map,
-          position: place.geometry.location
+          position: place.geometry.location,
         });
-
           //Display selected data on marker click
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -124,15 +124,16 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     marker = new google.maps.Marker({
       map: map,
-      position: place.geometry.location
+      position: place.geometry.location,
+      animation: google.maps.Animation.DROP
 });
 
-//On map/marker click, displays restaurant information in a card beneath the map object
+  //On map/marker click, displays restaurant information in a card beneath the map object
 
-google.maps.event.addListener(marker, 'click', function() {
+  google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
- 
+
       console.log(place)
       
         //conditional to convert hours data from true/false to open/closed in display
@@ -158,4 +159,5 @@ google.maps.event.addListener(marker, 'click', function() {
           console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
     });
   };
+
 });
