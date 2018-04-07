@@ -16,6 +16,15 @@ Users can enter in a location or address and restaurants will be displayed on a 
 
 #
 
+## Screenshots:
+#
+
+![alt text](https://github.com/cynthialu42/Recipe/blob/master/images/Recipe-index-screenshot.png?raw=true)
+![alt text](https://github.com/cynthialu42/Recipe/blob/master/images/Recipes-page-screenshot.png?raw=true)
+![alt text](https://github.com/cynthialu42/Recipe/blob/master/images/Restaurant-page-screenshot.png?raw=true)
+
+#
+
 https://cynthialu42.github.io/Recipe/index.html
 
 
