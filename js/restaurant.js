@@ -104,6 +104,7 @@ function placeDetailsByPlaceId(service, map, infowindow) {
               'Place ID: ' + place.place_id + '<br>' +
               place.formatted_address + '</div>');
             infowindow.open(map, this);  
+            
           });
         }
 });}
@@ -132,6 +133,7 @@ function createMarker(place) {
 google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
+      
  
       console.log(place)
       
