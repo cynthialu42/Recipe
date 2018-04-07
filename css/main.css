@@ -388,6 +388,10 @@ html, body {
     bottom: 0;
     left: 10px;
 }
+
+.peekinghamster:hover{
+    transform: scale(1.2);
+}
 .hamster{
     width: 100%;
 }

@@ -250,7 +250,7 @@ $(document).ready(function(){
         }
         
     });
-
+    $('[data-toggle="tooltip"]').tooltip();
     $('.js-you-decide').on('click', function(event) {
         event.preventDefault();
         $('.js-recipes').empty();
@@ -259,7 +259,7 @@ $(document).ready(function(){
         showRecipes(from, to, randomNumber);
         $('.js-you-decide').addClass('hide');
         $('.js-results-back').removeClass('hide');
-        
+        $('.next').addClass('hide');
         console.log('clicked on you decide');
     });
 
@@ -268,6 +268,7 @@ $(document).ready(function(){
         $('.js-recipes').empty();   
         $('.js-results-back').addClass('hide');
         $('.js-you-decide').removeClass('hide');
+        $('.next').removeClass('hide');
         showRecipes(from, to, random);
     });
 
