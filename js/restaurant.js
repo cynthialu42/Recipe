@@ -13,6 +13,7 @@ let results;
 let request;
 let address;
 
+
 //On button click, initiate the apps principle functions and gets data from API
 
 $(".js-submit").on("click", function(){
@@ -95,9 +96,8 @@ function placeDetailsByPlaceId(service, map, infowindow) {
         //Registers an event to handle a click on the marker.
         marker = new google.maps.Marker({
           map: map,
-          position: place.geometry.location
+          position: place.geometry.location,
         });
-
           //Display selected data on marker click
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -124,21 +124,22 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     marker = new google.maps.Marker({
       map: map,
-      position: place.geometry.location
+      position: place.geometry.location,
+      animation: google.maps.Animation.DROP
 });
 
-//On map/marker click, displays restaurant information in a card beneath the map object
+  //On map/marker click, displays restaurant information in a card beneath the map object
 
-google.maps.event.addListener(marker, 'click', function() {
+  google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
- 
+
       console.log(place)
       
         //conditional to convert hours data from true/false to open/closed in display
         
         let open;
-        if (place.opening_hours.open_now === "true"){
+        if (place.opening_hours.open_now === true){
           open = "Open!"
         }
         else{
@@ -150,7 +151,7 @@ google.maps.event.addListener(marker, 'click', function() {
           $(".js-cardDisplay").removeClass("d-none");
           $(".rName").text(place.name);
           $(".rAddress").text(place.vicinity);
-          $(".rOpen").text("Open/Closed: " + open);
+          $(".rOpen").html("Open/Closed: " + "<b>" + open + "</b>");
           $(".rRating").text("Rating out of 5: " + place.rating);
           $(".rPrice").text("Price level: " + place.price_level);
           $(".rImg").attr("src", place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 150}));
@@ -158,4 +159,5 @@ google.maps.event.addListener(marker, 'click', function() {
           console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
     });
   };
+
 });

@@ -464,7 +464,7 @@ html, body {
     }
 
     .fluid-utensil {
-        font-size: calc(300px + (500 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-size: 17rem;
     }
 
     /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
