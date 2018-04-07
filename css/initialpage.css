@@ -11,13 +11,18 @@ body {
     background-size: cover;
     
 }
+
+.fluid-header {
+    font-size: calc(40px + (130 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
 .lead,.title,.btn {
     font-family: 'wednesday', arial;
 }
 
 .title {
     margin: .25em 0em 0em 0em;
-    font-size: 8em;
+    /* font-size: 8em; */
 }
 
 .lead {
@@ -76,4 +81,23 @@ h1,p {
     font-family: 'wednesday', arial;
     color: #540804;
     font-size: 1.1em;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .btn {
+        font-size: 2em;
+        margin: 0.5em 2em;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+
+
+    .btn {
+        margin: 0.5em 2em;
+        padding:15px 30px;
+        font-size: 95%;
+        line-height: 1;
+    }
 }
