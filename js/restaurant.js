@@ -151,7 +151,7 @@ function createMarker(place) {
           $(".js-cardDisplay").removeClass("d-none");
           $(".rName").text(place.name);
           $(".rAddress").text(place.vicinity);
-          $(".rOpen").text("Open/Closed: " + open);
+          $(".rOpen").html("Open/Closed: " + "<b>" + open + "</b>");
           $(".rRating").text("Rating out of 5: " + place.rating);
           $(".rPrice").text("Price level: " + place.price_level);
           $(".rImg").attr("src", place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 150}));
