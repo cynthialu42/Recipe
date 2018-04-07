@@ -354,6 +354,11 @@ html, body {
     
 }
 
+.d-flex {
+    height: 40vh;
+    
+}
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -436,6 +441,9 @@ html, body {
     border-color: white;
 }
 
+<<<<<<< HEAD
+
+=======
 .spinning-icon{
     display: block;
     flex-wrap: wrap;
@@ -452,6 +460,7 @@ html, body {
 .hide{
     display: none;
 }
+>>>>>>> 34b3962819a19dbf1290dab3ea9a3bd8e1c8558e
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/
