@@ -56,12 +56,13 @@ $(document).ready(function(){
         let end = "&to=" + to;
         let strIngredientsList = encodeURIComponent(tempStrIngredientsList);
         var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a" + start + end;
-
+        $('#loading-image').removeClass('hide');
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
             console.log(response);
+            $('#loading-image').addClass('hide');
             if (random == -1) {
                 console.log('random equals -1');
     
@@ -227,6 +228,11 @@ $(document).ready(function(){
         });
     
     }
+    // $('#loading-image').bind('ajaxStart', function(){
+    //     $(this).show();
+    //     }).bind('ajaxStop', function(){
+    //         $(this).hide();
+    // });
 
     $('.js-add').on('click', function(event) {
         // Prevent the default action / page refresh
