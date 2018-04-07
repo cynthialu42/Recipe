@@ -342,9 +342,7 @@ html, body {
     font-size: 15rem;
 }
 
-.hide{
-    display: none;
-}
+
 
 .white {
     color: white;
@@ -399,13 +397,17 @@ html, body {
     position: fixed;
     bottom: 50px;
     right: 0px;
-    width: 25%;
+    width: 20%;
 }
 .peekinghamster{
     width: 25%;
     position: absolute;
     bottom: 0;
     left: 10px;
+}
+
+.peekinghamster:hover{
+    transform: scale(1.2);
 }
 .hamster{
     width: 100%;
@@ -439,7 +441,26 @@ html, body {
     border-color: white;
 }
 
+<<<<<<< HEAD
 
+=======
+.spinning-icon{
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    font-size: 3em;
+    position: relative;
+    justify-content: center;
+    color: rgb(189, 60, 0);
+}
+
+.hide{
+    display: none;
+}
+>>>>>>> 34b3962819a19dbf1290dab3ea9a3bd8e1c8558e
 /* ------------------------------------------------------------------
 ----------------------------MEDIA QUERIES----------------------------
 --------------------------------------------------------------------*/
@@ -452,7 +473,7 @@ html, body {
     }
 
     .fluid-utensil {
-        font-size: calc(300px + (500 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-size: 17rem;
     }
 
     /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */

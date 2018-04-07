@@ -56,12 +56,13 @@ $(document).ready(function(){
         let end = "&to=" + to;
         let strIngredientsList = encodeURIComponent(tempStrIngredientsList);
         var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a" + start + end;
-
+        $('#loading-image').removeClass('hide');
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
             console.log(response);
+            $('#loading-image').addClass('hide');
             if (random == -1) {
                 console.log('random equals -1');
     
@@ -227,6 +228,11 @@ $(document).ready(function(){
         });
     
     }
+    // $('#loading-image').bind('ajaxStart', function(){
+    //     $(this).show();
+    //     }).bind('ajaxStop', function(){
+    //         $(this).hide();
+    // });
 
     $('.js-add').on('click', function(event) {
         // Prevent the default action / page refresh
@@ -250,7 +256,7 @@ $(document).ready(function(){
         }
         
     });
-
+    $('[data-toggle="tooltip"]').tooltip();
     $('.js-you-decide').on('click', function(event) {
         event.preventDefault();
         $('.js-recipes').empty();
@@ -259,7 +265,7 @@ $(document).ready(function(){
         showRecipes(from, to, randomNumber);
         $('.js-you-decide').addClass('hide');
         $('.js-results-back').removeClass('hide');
-        
+        $('.next').addClass('hide');
         console.log('clicked on you decide');
     });
 
@@ -268,6 +274,7 @@ $(document).ready(function(){
         $('.js-recipes').empty();   
         $('.js-results-back').addClass('hide');
         $('.js-you-decide').removeClass('hide');
+        $('.next').removeClass('hide');
         showRecipes(from, to, random);
     });
 
