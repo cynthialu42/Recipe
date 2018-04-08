@@ -17,14 +17,14 @@ https://cynthialu42.github.io/Recipe/index.html
 #
 
 ## Screenshots:
-#
+
 ![alt text](https://github.com/cynthialu42/Recipe/blob/master/images/Recipe-index-screenshot.png?raw=true)
 ![alt text](https://github.com/cynthialu42/Recipe/blob/master/images/Recipes-page-screenshot.png?raw=true)
 ![alt text](https://github.com/cynthialu42/Recipe/blob/master/images/Restaurant-page-screenshot.png?raw=true)
 
 #
 ## Built with:
-#
+
 - HTML
 - CSS
 - Bootstrap
@@ -39,7 +39,7 @@ https://cynthialu42.github.io/Recipe/index.html
 
 #
 ## Future Features:
-#
+
 - Links to Grubhub that syncs up to our Google Maps API
 - Login feature so that users can favorite recipes
 - Be able to make multiple API calls to Edamam (or any other recipe API)
@@ -53,7 +53,7 @@ https://cynthialu42.github.io/Recipe/index.html
 
 #
 ## Team Members:
-#
+
 
 - Robertas Plynius
 - Brett Cimbalik
