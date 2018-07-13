@@ -54,10 +54,10 @@ https://cynthialu42.github.io/Recipe/index.html
 #
 ## Team Members:
 
-
-- Robertas Plynius
 - Brett Cimbalik
-- Ben Miller
 - Cynthia Lu
+- Ben Miller
+- Robertas Plynius
+
 
 
