@@ -55,7 +55,7 @@ $(document).ready(function(){
         let start = "&from=" + from;
         let end = "&to=" + to;
         let strIngredientsList = encodeURIComponent(tempStrIngredientsList);
-        var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=ef36201a4e68b398295a867bfcb3f89a" + start + end;
+        var queryURL = "https://api.edamam.com/search?q=" + strIngredientsList + "&app_id=40511119&app_key=" + start + end;
         $('#loading-image').removeClass('hide');
         $.ajax({
             url: queryURL,
